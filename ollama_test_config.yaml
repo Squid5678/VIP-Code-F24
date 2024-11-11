@@ -1,0 +1,19 @@
+# URL for API call
+api:
+  url: "http://localhost:11434/api/generate"
+  headers:
+    Content-Type: "application/json"
+
+# Model
+model:
+  name: "llama3.2"
+  parameters:
+    stream: false
+
+# Prompt
+test:
+  prompt: "What color is the sky?"
+
+# Performance
+metrics:
+  show_tokens_per_second: true
