@@ -1,6 +1,6 @@
 # URL for API call
 api:
-  url: "http://localhost:11434/api/generate"
+  url: "http://143.215.144.51:11434/api/generate"
   headers:
     Content-Type: "application/json"
 

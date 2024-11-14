@@ -10,6 +10,8 @@ import json
 api_url = "http://localhost:11434/api/generate"
 
 headers = {
+    "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.8) Gecko/20100722 Firefox/3.6.8 GTB7.1 (.NET CLR 3.5.30729)", 
+    "Referer": "http://example.com",
     "Content-Type": "application/json"
 }
 
@@ -29,6 +31,6 @@ if response.status_code == 200:
     eval_count = data["eval_count"]
     eval_duration = data["eval_duration"]
     tokens_per_second = eval_count / (eval_duration * pow(10, 9))
-    print("Tokens Per Second: " + tokens_per_second)
+    print("Tokens Per Second: " + str(tokens_per_second))
 else:
     print("Unable to get a response")
