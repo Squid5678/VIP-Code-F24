@@ -5,7 +5,69 @@ You will need to choose the correct object from the initial specification based 
     (predicate x y)
 )
 The PDDL domain definition of the robotic task with pick-n-place and navigation is defined as:
-domain_definition
+(define (domain pick_and_place_nav)
+    (:types object robot)
+
+    (:predicates 
+        (GRASPABLE ?x - object)
+        (CONTAINABLE ?x - object)
+        (carry ?r - robot ?x - object)
+        (contain ?x - object ?y - object)
+        (free ?r - robot)
+        (close ?x - object ?y - object)
+        (at-robot ?r ?y - object)
+    )
+
+    (:action navigate-to-pickable
+        :parameters (?r - robot ?obj - object)
+        :precondition 
+        (and 
+            (free ?r)
+            (GRASPABLE ?obj)
+            (not (carry ?r ?obj))
+        )
+        :effect 
+        (at-robot ?r ?obj)
+    )
+
+    (:action navigate-to-container
+        :parameters (?r - robot ?cont - object ?item - object)
+        :precondition 
+        (and 
+            (carry ?r ?item)
+            (CONTAINABLE ?cont)
+        )
+        :effect 
+        (at-robot ?r ?cont)
+    )
+
+    (:action pickup
+        :parameters (?x - object ?r - robot)
+        :precondition 
+        (and 
+            (GRASPABLE ?x)
+            (free ?r)
+            (at-robot ?r ?x)
+        )
+        :effect 
+        (and
+        (carry ?r ?x)
+        (not (free ?r)) ; Make sure this is correctly formatted
+    )
+    )
+
+    (:action place 
+        :parameters (?x - object ?r - robot ?z - object)
+        :precondition 
+        (and 
+            (carry ?r ?x)
+            (CONTAINABLE ?z)
+            (at-robot ?r ?z)
+        )
+        :effect 
+        (contain ?x ?z)
+    )
+)
 The example natural language instruction is "Move the apple on the countertop to the basket" and the input PDDL problem definition is:
 (define (problem pick_place_scenario)
     (:domain pick_and_place_nav)
