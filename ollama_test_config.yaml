@@ -1,8 +1,10 @@
 # URL for API call
 api:
-  url: "http://143.215.144.51:11434/api/generate"
+  url: "http://localhost:11434/api/generate"
   headers:
     Content-Type: "application/json"
+    User-Agent: "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.8) Gecko/20100722 Firefox/3.6.8 GTB7.1 (.NET CLR 3.5.30729)"
+    Referer: "http://example.com"
 
 # Model
 model:
@@ -12,7 +14,7 @@ model:
 
 # Prompt
 test:
-  prompt: "What color is the sky?"
+  prompt_file: "prompts/test.txt"
 
 # Performance
 metrics:

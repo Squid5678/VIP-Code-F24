@@ -1,0 +1,544 @@
+You are a robot agent and I want you to solve planning problems. 
+You will be given natural language instruction, Planning Domain Definition Language (PDDL) domain definition and incomplete PDDL problem definition as input.
+You will need to choose the correct object from the initial specification based on instruction and output the goal specification for PDDL problem definition based on the following format:
+(:goal 
+    (predicate x y)
+)
+The PDDL domain definition of the robotic task with pick-n-place and navigation is defined as:
+domain_definition
+The example natural language instruction is "Move the apple on the countertop to the basket" and the input PDDL problem definition is:
+(define (problem pick_place_scenario)
+    (:domain pick_and_place_nav)
+    (:objects 
+        apple0 - object
+        apple1 - object
+        countertop - object
+        basket - object
+        robo - robot
+    )
+    (:init 
+        (GRASPABLE apple)
+        (CONTAINABLE countertop)
+        (close apple0 countertop)
+        (CONTAINABLE basket)
+        (free robo)
+    )
+)
+Based on the instruction, you need to choose the apple close to countertop. Then the output PDDL goal specification should be:
+(:goal 
+    (contain apple0 basket)
+)
+Sometimes the given natural language instruction might have some mismatches between input PDDL problem definition such that the object mentioned in the instruction does not exist in the input problem definition.
+The example natural language instruction is "Move the apple on the countertop to the basket" and input PDDL problem definition which has no apple is given as:
+(define (problem pick_place_scenario)
+    (:domain pick_and_place_nav)
+    (:objects 
+        countertop - object
+        basket - object
+        robo - robot
+    )
+    (:init 
+        (CONTAINABLE countertop)
+        (CONTAINABLE basket)
+        (free robo)
+    )
+) 
+You should assume there is an apple and the output PDDL goal specification should be:
+(:goal 
+    (contain apple basket)
+)
+Another example natural language instruction is "Move the apple on the countertop to the basket" and input PDDL problem definition which does not have an apple close to countertop is given as:
+(define (problem pick_place_scenario)
+    (:domain pick_and_place_nav)
+    (:objects 
+        apple0 - object
+        apple1 - object
+        countertop - object
+        table - object
+        basket - object
+        robo - robot
+    )
+    (:init 
+        (GRASPABLE apple)
+        (CONTAINABLE countertop)
+        (CONTAINABLE table)
+        (CONTAINABLE basket)
+        (close apple0 table)
+        (free robo)
+    )
+)
+You should not choose apple0 since it is close to table but choose apple1 since it is not close to any other objects. The output PDDL goal specification should be:
+(:goal 
+    (contain apple1 basket)
+)
+Now for the test case, The human instruction is "I want potato to be picked up from countertop and placed in the sink". 
+The input PDDL problem definition is:
+(define (problem pick_place_scenario)
+    (:domain pick_and_place_nav)
+    (:objects 
+        coffee_table_8eef75f4-c553-458c-b84b-4bb24387833e - object
+        ladle_38a1153e-018b-4bab-9bdf-461badcf87e0 - object
+        counter_top_05b3bbc8-1f69-4db0-92e2-fcd40bfa6377 - object
+        knife_cb6162f1-4b92-46d0-b5a3-9a6c4b69f58e - object
+        chair_c21f00d5-d149-42c4-862f-41af33366893 - object
+        chair_2aa0f8e5-bb62-417c-aa1c-437bdbf06703 - object
+        knife_047a264e-874e-4f98-8863-259a80fefbd7 - object
+        knife_5457f7df-fbf1-4260-8450-27e0227aa6bc - object
+        side_table_e3b2a469-03f6-4a6f-8cd7-1a9b6e2ef62c - object
+        table_0f9a1034-5e88-4c4d-8102-73957d34872c - object
+        knife_93d60e81-975d-409e-a4b8-ee6b66272921 - object
+        bottle_b586dbbc-f2f5-4a8e-adc5-42cc4bef3b6a - object
+        house_plant_60253d56-a188-4a4a-9749-3077b81df685 - object
+        knife_5083cb73-2ea1-4872-8050-3c906a0a9b18 - object
+        knife_4b4aa670-4ff8-4d84-9b7f-8394d4feb9c7 - object
+        ladle_ccd0c717-af29-4bd1-8e50-33b018fa0f13 - object
+        knife_d18c820c-4995-44c5-b996-635a0219017b - object
+        fridge_1119db1e-363f-4e1f-a388-2fd2f1d87177 - object
+        knife_491339ae-a8cb-44a6-9437-afd0862463f7 - object
+        fridge_6c44fa9b-e5ad-452f-90a1-dafc581bf6d5 - object
+        counter_top_1abcb077-3d31-43fe-866d-915deac1b722 - object
+        counter_top_208ac4c7-2db2-4455-bbad-cde7c582ea3c - object
+        toilet_e461e9ec-83dd-4109-ab56-8421ce328121 - object
+        spoon_fd429140-d767-4728-88d9-ec9e20ff1550 - object
+        alarm_clock_f34ef4b6-f57e-4a45-99eb-cb2d1f9e8b8b - object
+        side_table_3a12971a-7da2-44fe-b00f-02c0260577a9 - object
+        pencil_f6a2225c-7200-4d21-a7bf-05af4be2bc87 - object
+        top_cabinet_1465aa4c-e86d-43fa-b5b3-cdbed154fe3b - object
+        side_table_b9b60f1e-1872-41ad-a6b9-8a58da031b0b - object
+        knife_30be867b-d633-40ee-9aa5-2828211ead88 - object
+        mug_5fe60726-8897-4ecc-a482-e74e1ca3b8b1 - object
+        cup_32fcee20-46a6-41cd-ab72-faf05512cd0b - object
+        cup_0af8a3b9-6238-4793-8e6c-56d81e4e7df6 - object
+        bottle_12f8d040-a87b-4620-be40-01a753d26e85 - object
+        milk_68fa3da0-f6b2-4c2f-b7b5-4b8b8cbf9583 - object
+        teddy_bear_c5e900ee-0e53-495b-b91c-8c850ad90ff5 - object
+        coffee_table_ab580de2-6fe9-43dc-aabe-97991ecaf2da - object
+        shelf_30a3169b-c912-4fc0-b369-26eea46f2bc9 - object
+        house_plant_28f06d40-052e-4c94-af35-d1bb1c9cb816 - object
+        side_table_2029e6a4-a23d-470b-963b-9607ee4b98f7 - object
+        shelf_966e796c-a541-474e-ae7b-18d97bb6dd33 - object
+        milk_4da52b01-d82e-4131-8164-6e3e9014eab2 - object
+        box_of_tissues_f119980e-3f14-48d9-a789-116c8b80d2f8 - object
+        desk_26383d1c-ab77-456b-b7ef-245b54c063e8 - object
+        pencil_b6d94ee3-610a-4d9a-8281-7168daae0894 - object
+        soap_423d79ee-6480-4129-af20-33db8a411dd6 - object
+        counter_top_ba72e9d5-efb2-400d-9ef7-289c5da34914 - object
+        top_cabinet_3661b0d2-ee5c-4c1f-908a-4032c3db51dc - object
+        desk_lamp_e3256470-1193-429c-a91b-daf10a86846b - object
+        house_plant_bb0f11ba-2ea4-42d3-b1a1-86a8b4869ebf - object
+        laptop_31cdfd3b-f86b-46c4-88f4-42a1c6a63713 - object
+        desk_lamp_bf8c63d2-df78-4ea5-a4b4-85041bca2479 - object
+        top_cabinet_a60e0aa6-70b6-4ad0-960d-951b550161af - object
+        sofa_5f92b62d-9b8f-4f32-adc9-382b5ff0aeaa - object
+        house_plant_a9e7a874-b32e-4a0f-8fa6-1fed05929bf5 - object
+        action_figure_8715671f-69fc-4286-9696-ebafae166dd8 - object
+        counter_top_cea13173-c61c-4224-9e4d-59711858aee5 - object
+        knife_9ec04843-f951-4762-b3e0-7dae96dafc55 - object
+        fork_dacf84a5-8c6a-4f19-9f29-0f471a748f46 - object
+        peach_516c3b0a-c45f-4656-a476-b75c59169950 - object
+        sofa_dbe9dcf3-6e7d-4575-ac55-4f3fe6e7af21 - object
+        bottle_6489917d-2ed9-4184-9a52-2cc89d35e267 - object
+        counter_top_16ccc220-3785-45fb-98bb-0a8c6fcf682d - object
+        fork_1a5968d7-8fac-4d75-ad73-e29bada96954 - object
+        sofa_ee126924-a827-4ba8-99d2-7ce7bba12813 - object
+        desk_lamp_80228de3-c89c-4e36-8f09-d12430dd146e - object
+        milk_cd439674-7750-4a73-a423-29ba4d9bf880 - object
+        desk_lamp_c6f9b244-076e-4a7d-9c4c-26b0fdd7cafd - object
+        desk_7ec372a3-f9c9-4a8f-ad70-8323feb82b5f - object
+        sofa_9c0fb361-5e91-4269-bc61-53dffb492e65 - object
+        knife_87d65535-eddc-4a79-80c2-48351450565b - object
+        house_plant_3ddbe01e-a288-4e9b-9ed2-03084760f27d - object
+        laptop_7ec06eb0-3cca-43a8-8677-b705d5f6b243 - object
+        side_table_001e57b3-f6d3-43b6-9554-0840eb1ee206 - object
+        shelf_15833ca2-6cca-4453-8c17-d03173055711 - object
+        knife_46590214-abaa-4286-9be2-438a12ca40c6 - object
+        knife_943783bf-ae4c-4fed-baa3-ebd145fb5197 - object
+        knife_18f73b6b-6020-4ea6-a41e-c7a28d239152 - object
+        counter_top_5c997e01-d8a3-4ab8-b00a-042460e09a38 - object
+        side_table_0de34f4e-60ed-48f1-a89e-59bc27b0d1bb - object
+        sofa_4f09ad21-896f-4efd-8927-ecdc7ecd8b60 - object
+        candle_0e4ffab7-8641-4621-85e2-b60729e72129 - object
+        knife_c3d90a9b-ef9a-464a-9cfa-1d60d6943f4e - object
+        counter_top_6c89250b-c511-47ec-84c2-3991ff1d46bd - object
+        knife_0d2a074b-9691-491b-bb7c-e5ecabcb5391 - object
+        toy_375ed765-f954-49d9-81d9-1a3effff67f1 - object
+        pan_994c297f-5286-40b8-9bb1-4450c9904109 - object
+        teddy_bear_ccc6599d-8144-46fe-b4fd-0b27227e5fe1 - object
+        house_plant_6f9e2950-cf49-408e-8dfd-97e9d6a4075b - object
+        bottle_8eb24a41-8eb3-4236-b4e2-4772e797605b - object
+        knife_f34dbd05-6238-4296-a00d-0a30689be133 - object
+        coffee_table_bbaf1f1e-cf66-4b7b-9b47-a8d8d285c251 - object
+        knife_51694b2e-e81f-4b44-8158-a91496e68ce8 - object
+        oil_7e7ec812-7d8e-4c17-811b-140664f573c9 - object
+        knife_50b3e089-abe7-4a50-80c3-00cd12d53556 - object
+        counter_top_dacbbf93-78bb-42f0-8f1f-c93188751a62 - object
+        house_plant_3a5ed8e0-1a6f-4355-85c7-7344f8929704 - object
+        top_cabinet_b722bdd7-475e-43c8-ba4b-be1583f8559d - object
+        toilet_1e2646ff-66b4-4314-8603-7a5bc4db0f74 - object
+        basil_06e069c4-b46f-42b5-b082-d60ae354a826 - object
+        basket_ball_cbe61aad-93af-4cb7-9acb-3aa8844eb4c8 - object
+        counter_top_e9c8c0b0-b85a-4a77-9906-41f2bd33f049 - object
+        smartphone_0ab722be-9b47-4fcf-8d79-87449cd8643d - object
+        bottle_242653cd-13f6-43bb-a31e-f91bdc31e9d1 - object
+        cup_6cd691e5-00e9-4578-a944-358efd426c83 - object
+        soda_41ed6081-ed24-485c-acfb-7e651d0499c2 - object
+        spray_bottle_d20937a9-0b0f-45c2-8c7e-fa791230160b - object
+        fork_f41aedfc-8e61-4e00-81c6-3134fa667a64 - object
+        tomato_19f1bf21-cfa3-4b32-9d35-4747134cf151 - object
+        grapes_8b8b5f81-f51d-47b4-84ab-49af8181f649 - object
+        counter_top_ec9ba6fa-7698-4113-9bb8-7f7b616e50d0 - object
+        knife_e0047027-67d5-46bb-bfe0-1bc1a36ae76c - object
+        shelf_1b04009a-1eca-45e6-b7e9-ff45d9c9c66b - object
+        counter_top_28015b23-9157-487b-9ae8-d8a9422aff79 - object
+        toilet_826e23f3-f696-4396-b2c2-67f97a6932e7 - object
+        side_table_69a9e5c3-243a-4646-adb6-6a6d716cb5cc - object
+        remote_control_ec899fed-336a-4361-ad41-ae358bbb5084 - object
+        counter_top_9ed28b2a-886e-42dd-aa4b-a7f4b797dc62 - object
+        bottle_f562f73a-a1d5-4e49-965c-88e16e28fe9c - object
+        bottle_4cfa7800-de3a-46bb-91b7-eeded810adbb - object
+        desk_lamp_115e2815-3bba-4588-a96c-eb19aba97498 - object
+        sofa_9616f5e1-3606-48c2-82fb-26670f0c4ffd - object
+        side_table_d0e6fc60-cdfe-4d31-bef0-1e45ec88ce31 - object
+        table_58aa5359-1998-42f2-9f01-b2226b2ba9ae - object
+        house_plant_be1a505c-1717-4d59-9b61-eeaeb07d4855 - object
+        pencil_114c57a3-e013-4382-9b07-5fd86d33fe7b - object
+        pencil_0b0ac670-af8a-44db-a2aa-c2cc8ffbf358 - object
+        side_table_cd16a346-cb0c-4551-8f3b-958b6386c99d - object
+        legos_1cb7e813-8982-4882-b581-23541d84dd25 - object
+        counter_top_9f9d0d6a-7017-4e40-91a5-3e3363c9f7ae - object
+        spray_bottle_40554863-7cb2-464c-9d82-9fe8fc4e9254 - object
+        bottle_05d061d3-b083-40e2-9f99-0426c3344001 - object
+        knife_feb91dc9-e418-48ce-a9b1-b968b1d6d1e1 - object
+        garbage_can_b5373b49-6c42-4a15-97a9-a058c07e2e95 - object
+        spoon_45bd0ad9-afcb-476e-85b0-b2b6d80f65a5 - object
+        cup_2568fff3-a419-42f2-936b-96e7025ff01f - object
+        pencil_34f30681-7cfa-484d-a054-6a5e429c416f - object
+        knife_e8da75a7-b7e7-4e3a-b9ff-a5b2e0177629 - object
+        salt_shaker_487986ea-9779-4d98-9c44-eca31d030dd7 - object
+        knife_37e51e71-cdbd-49c5-a574-3f9a0c38be5b - object
+        table_3e269624-7055-4d4a-a3ba-979ae855d94d - object
+        pan_6265d6de-9fc9-4fad-a778-0ca5c0a104ac - object
+        knife_4483d089-f867-4ae2-b76a-6a0f20058afb - object
+        top_cabinet_e916e887-e119-4e9a-8092-a8f75a86362b - object
+        desk_lamp_32400913-c94a-490e-9082-015a6fe8a404 - object
+        potato_fa91ccf6-5b0a-4c44-b95d-5479e24523b0 - object
+        towel_roll_08f9379a-fb9c-4a72-b759-3568dcf37929 - object
+        counter_top_59ffe842-cc10-49f7-8fc6-62dc713bb18b - object
+        tv_stand_123f218e-037e-4b4f-a765-0e80661eef8c - object
+        fridge_0abac7b3-0d90-467c-b206-6860632da0da - object
+        toilet_6dbcc642-6347-4dee-a056-124260d9bf33 - object
+        top_cabinet_a0d89750-8100-487d-8337-ed21f21b628c - object
+        laptop_9e842b3b-8d93-4d07-a4b6-15d43dbdc4d4 - object
+        sink_c82c6197-e65e-4002-b3b6-26666d72c7cf - object
+        ladle_9c4e36e1-c8bb-4b88-a6f5-f42fcb480fb4 - object
+        counter_top_27528a15-b05c-46b1-971d-64144a5591dd - object
+        towel_roll_5ca7193d-cb6a-410f-9ea7-649f21a415ba - object
+        cup_99edc9e4-5666-4fbb-8ad6-39663e42c3ef - object
+        knife_b79e6b4e-2061-4491-9a98-fb2428339e8a - object
+        counter_top_70f42e62-a475-476f-aa81-996c93a25ebc - object
+        knife_481e705a-f4dd-40e9-b050-3ecba768cb99 - object
+        top_cabinet_7b8ced33-89c8-4e5a-b9ef-a38d1806676f - object
+        bottle_4e8b78e7-b92a-4627-98ad-fd679b376c71 - object
+        counter_top_78fddbd3-4141-49cd-9d27-302c35b443ef - object
+        soap_bottle_fa22ae59-791a-45ac-8848-603f6577057b - object
+        bottle_d1cc4741-5f7a-4696-a83e-76c07c1189db - object
+        bottle_50c08db5-9856-4893-88cf-99513d197c40 - object
+        soap_bottle_69137a40-9bd1-49bc-85c9-6000507248a7 - object
+        shelving_unit_222d0dd5-1e83-4408-b90b-2f420e3ff6fc - object
+        dishtowel_21f3ddad-f869-4241-bb63-f98e2a5399ba - object
+        coffee_machine_0ed7a10e-e157-4021-a78c-4fb953166a7a - object
+        tv_stand_0d49a0e6-16af-45db-9f5c-61af4a352935 - object
+        flour_c5ee228b-7ad3-4999-8d6a-1de2e21f2f19 - object
+        salt_shaker_2d9fe15c-0db8-425c-ae5b-bcd28260190f - object
+        bottle_70375f36-fe31-49a4-bf75-182664a0348f - object
+        yogurt_a3b895b6-4d40-4bc6-b2b5-a33e2704bcd7 - object
+        microwave_bc332406-071f-42fb-8224-508a08ee2546 - object
+        bottle_41efa7d1-7d49-49a8-9f11-c68ce023c59b - object
+        pot_11cdb349-513f-4f62-8e3c-e9843d8ef200 - object
+        watch_799574c4-9753-4208-bddd-688ca360de97 - object
+        laptop_7b26693b-ccc7-4777-a957-6fbb306e0890 - object
+        knife_3024e385-f4b5-4436-b618-6cb1bf0c3cb1 - object
+        milk_9497a6c1-6d39-4b21-9404-b4ffe0fbe5c8 - object
+        jar_00c4fc5f-2701-4ef5-a947-b641aabe05ad - object
+        remote_control_cb0cf723-733e-4e43-9281-9dff10d348a9 - object
+        action_figure_5c0eb900-151e-446c-aca4-b096db6c6328 - object
+        robo - robot
+    )
+
+    (:init
+       (CONTAINABLE coffee_table_8eef75f4-c553-458c-b84b-4bb24387833e)
+       (GRASPABLE ladle_38a1153e-018b-4bab-9bdf-461badcf87e0)
+       (CONTAINABLE counter_top_05b3bbc8-1f69-4db0-92e2-fcd40bfa6377)
+       (GRASPABLE knife_cb6162f1-4b92-46d0-b5a3-9a6c4b69f58e)
+       (CONTAINABLE chair_c21f00d5-d149-42c4-862f-41af33366893)
+       (CONTAINABLE chair_2aa0f8e5-bb62-417c-aa1c-437bdbf06703)
+       (GRASPABLE knife_047a264e-874e-4f98-8863-259a80fefbd7)
+       (GRASPABLE knife_5457f7df-fbf1-4260-8450-27e0227aa6bc)
+       (CONTAINABLE side_table_e3b2a469-03f6-4a6f-8cd7-1a9b6e2ef62c)
+       (CONTAINABLE table_0f9a1034-5e88-4c4d-8102-73957d34872c)
+       (GRASPABLE knife_93d60e81-975d-409e-a4b8-ee6b66272921)
+       (GRASPABLE bottle_b586dbbc-f2f5-4a8e-adc5-42cc4bef3b6a)
+       (GRASPABLE house_plant_60253d56-a188-4a4a-9749-3077b81df685)
+       (GRASPABLE knife_5083cb73-2ea1-4872-8050-3c906a0a9b18)
+       (GRASPABLE knife_4b4aa670-4ff8-4d84-9b7f-8394d4feb9c7)
+       (GRASPABLE ladle_ccd0c717-af29-4bd1-8e50-33b018fa0f13)
+       (GRASPABLE knife_d18c820c-4995-44c5-b996-635a0219017b)
+       (CONTAINABLE fridge_1119db1e-363f-4e1f-a388-2fd2f1d87177)
+       (GRASPABLE knife_491339ae-a8cb-44a6-9437-afd0862463f7)
+       (CONTAINABLE fridge_6c44fa9b-e5ad-452f-90a1-dafc581bf6d5)
+       (CONTAINABLE counter_top_1abcb077-3d31-43fe-866d-915deac1b722)
+       (CONTAINABLE counter_top_208ac4c7-2db2-4455-bbad-cde7c582ea3c)
+       (CONTAINABLE toilet_e461e9ec-83dd-4109-ab56-8421ce328121)
+       (GRASPABLE spoon_fd429140-d767-4728-88d9-ec9e20ff1550)
+       (GRASPABLE alarm_clock_f34ef4b6-f57e-4a45-99eb-cb2d1f9e8b8b)
+       (CONTAINABLE side_table_3a12971a-7da2-44fe-b00f-02c0260577a9)
+       (GRASPABLE pencil_f6a2225c-7200-4d21-a7bf-05af4be2bc87)
+       (CONTAINABLE top_cabinet_1465aa4c-e86d-43fa-b5b3-cdbed154fe3b)
+       (CONTAINABLE side_table_b9b60f1e-1872-41ad-a6b9-8a58da031b0b)
+       (GRASPABLE knife_30be867b-d633-40ee-9aa5-2828211ead88)
+       (GRASPABLE mug_5fe60726-8897-4ecc-a482-e74e1ca3b8b1)
+       (GRASPABLE cup_32fcee20-46a6-41cd-ab72-faf05512cd0b)
+       (GRASPABLE cup_0af8a3b9-6238-4793-8e6c-56d81e4e7df6)
+       (GRASPABLE bottle_12f8d040-a87b-4620-be40-01a753d26e85)
+       (GRASPABLE milk_68fa3da0-f6b2-4c2f-b7b5-4b8b8cbf9583)
+       (GRASPABLE teddy_bear_c5e900ee-0e53-495b-b91c-8c850ad90ff5)
+       (CONTAINABLE coffee_table_ab580de2-6fe9-43dc-aabe-97991ecaf2da)
+       (CONTAINABLE shelf_30a3169b-c912-4fc0-b369-26eea46f2bc9)
+       (GRASPABLE house_plant_28f06d40-052e-4c94-af35-d1bb1c9cb816)
+       (CONTAINABLE side_table_2029e6a4-a23d-470b-963b-9607ee4b98f7)
+       (CONTAINABLE shelf_966e796c-a541-474e-ae7b-18d97bb6dd33)
+       (GRASPABLE milk_4da52b01-d82e-4131-8164-6e3e9014eab2)
+       (GRASPABLE box_of_tissues_f119980e-3f14-48d9-a789-116c8b80d2f8)
+       (CONTAINABLE desk_26383d1c-ab77-456b-b7ef-245b54c063e8)
+       (GRASPABLE pencil_b6d94ee3-610a-4d9a-8281-7168daae0894)
+       (GRASPABLE soap_423d79ee-6480-4129-af20-33db8a411dd6)
+       (CONTAINABLE counter_top_ba72e9d5-efb2-400d-9ef7-289c5da34914)
+       (CONTAINABLE top_cabinet_3661b0d2-ee5c-4c1f-908a-4032c3db51dc)
+       (GRASPABLE desk_lamp_e3256470-1193-429c-a91b-daf10a86846b)
+       (GRASPABLE house_plant_bb0f11ba-2ea4-42d3-b1a1-86a8b4869ebf)
+       (GRASPABLE laptop_31cdfd3b-f86b-46c4-88f4-42a1c6a63713)
+       (GRASPABLE desk_lamp_bf8c63d2-df78-4ea5-a4b4-85041bca2479)
+       (CONTAINABLE top_cabinet_a60e0aa6-70b6-4ad0-960d-951b550161af)
+       (CONTAINABLE sofa_5f92b62d-9b8f-4f32-adc9-382b5ff0aeaa)
+       (GRASPABLE house_plant_a9e7a874-b32e-4a0f-8fa6-1fed05929bf5)
+       (GRASPABLE action_figure_8715671f-69fc-4286-9696-ebafae166dd8)
+       (CONTAINABLE counter_top_cea13173-c61c-4224-9e4d-59711858aee5)
+       (GRASPABLE knife_9ec04843-f951-4762-b3e0-7dae96dafc55)
+       (GRASPABLE fork_dacf84a5-8c6a-4f19-9f29-0f471a748f46)
+       (GRASPABLE peach_516c3b0a-c45f-4656-a476-b75c59169950)
+       (CONTAINABLE sofa_dbe9dcf3-6e7d-4575-ac55-4f3fe6e7af21)
+       (GRASPABLE bottle_6489917d-2ed9-4184-9a52-2cc89d35e267)
+       (CONTAINABLE counter_top_16ccc220-3785-45fb-98bb-0a8c6fcf682d)
+       (GRASPABLE fork_1a5968d7-8fac-4d75-ad73-e29bada96954)
+       (CONTAINABLE sofa_ee126924-a827-4ba8-99d2-7ce7bba12813)
+       (GRASPABLE desk_lamp_80228de3-c89c-4e36-8f09-d12430dd146e)
+       (GRASPABLE milk_cd439674-7750-4a73-a423-29ba4d9bf880)
+       (GRASPABLE desk_lamp_c6f9b244-076e-4a7d-9c4c-26b0fdd7cafd)
+       (CONTAINABLE desk_7ec372a3-f9c9-4a8f-ad70-8323feb82b5f)
+       (CONTAINABLE sofa_9c0fb361-5e91-4269-bc61-53dffb492e65)
+       (GRASPABLE knife_87d65535-eddc-4a79-80c2-48351450565b)
+       (GRASPABLE house_plant_3ddbe01e-a288-4e9b-9ed2-03084760f27d)
+       (GRASPABLE laptop_7ec06eb0-3cca-43a8-8677-b705d5f6b243)
+       (CONTAINABLE side_table_001e57b3-f6d3-43b6-9554-0840eb1ee206)
+       (CONTAINABLE shelf_15833ca2-6cca-4453-8c17-d03173055711)
+       (GRASPABLE knife_46590214-abaa-4286-9be2-438a12ca40c6)
+       (GRASPABLE knife_943783bf-ae4c-4fed-baa3-ebd145fb5197)
+       (GRASPABLE knife_18f73b6b-6020-4ea6-a41e-c7a28d239152)
+       (CONTAINABLE counter_top_5c997e01-d8a3-4ab8-b00a-042460e09a38)
+       (CONTAINABLE side_table_0de34f4e-60ed-48f1-a89e-59bc27b0d1bb)
+       (CONTAINABLE sofa_4f09ad21-896f-4efd-8927-ecdc7ecd8b60)
+       (GRASPABLE candle_0e4ffab7-8641-4621-85e2-b60729e72129)
+       (GRASPABLE knife_c3d90a9b-ef9a-464a-9cfa-1d60d6943f4e)
+       (CONTAINABLE counter_top_6c89250b-c511-47ec-84c2-3991ff1d46bd)
+       (GRASPABLE knife_0d2a074b-9691-491b-bb7c-e5ecabcb5391)
+       (GRASPABLE toy_375ed765-f954-49d9-81d9-1a3effff67f1)
+       (GRASPABLE pan_994c297f-5286-40b8-9bb1-4450c9904109)
+       (GRASPABLE teddy_bear_ccc6599d-8144-46fe-b4fd-0b27227e5fe1)
+       (GRASPABLE house_plant_6f9e2950-cf49-408e-8dfd-97e9d6a4075b)
+       (GRASPABLE bottle_8eb24a41-8eb3-4236-b4e2-4772e797605b)
+       (GRASPABLE knife_f34dbd05-6238-4296-a00d-0a30689be133)
+       (CONTAINABLE coffee_table_bbaf1f1e-cf66-4b7b-9b47-a8d8d285c251)
+       (GRASPABLE knife_51694b2e-e81f-4b44-8158-a91496e68ce8)
+       (GRASPABLE oil_7e7ec812-7d8e-4c17-811b-140664f573c9)
+       (GRASPABLE knife_50b3e089-abe7-4a50-80c3-00cd12d53556)
+       (CONTAINABLE counter_top_dacbbf93-78bb-42f0-8f1f-c93188751a62)
+       (GRASPABLE house_plant_3a5ed8e0-1a6f-4355-85c7-7344f8929704)
+       (CONTAINABLE top_cabinet_b722bdd7-475e-43c8-ba4b-be1583f8559d)
+       (CONTAINABLE toilet_1e2646ff-66b4-4314-8603-7a5bc4db0f74)
+       (GRASPABLE basil_06e069c4-b46f-42b5-b082-d60ae354a826)
+       (GRASPABLE basket_ball_cbe61aad-93af-4cb7-9acb-3aa8844eb4c8)
+       (CONTAINABLE counter_top_e9c8c0b0-b85a-4a77-9906-41f2bd33f049)
+       (GRASPABLE smartphone_0ab722be-9b47-4fcf-8d79-87449cd8643d)
+       (GRASPABLE bottle_242653cd-13f6-43bb-a31e-f91bdc31e9d1)
+       (GRASPABLE cup_6cd691e5-00e9-4578-a944-358efd426c83)
+       (GRASPABLE soda_41ed6081-ed24-485c-acfb-7e651d0499c2)
+       (GRASPABLE spray_bottle_d20937a9-0b0f-45c2-8c7e-fa791230160b)
+       (GRASPABLE fork_f41aedfc-8e61-4e00-81c6-3134fa667a64)
+       (GRASPABLE tomato_19f1bf21-cfa3-4b32-9d35-4747134cf151)
+       (GRASPABLE grapes_8b8b5f81-f51d-47b4-84ab-49af8181f649)
+       (CONTAINABLE counter_top_ec9ba6fa-7698-4113-9bb8-7f7b616e50d0)
+       (GRASPABLE knife_e0047027-67d5-46bb-bfe0-1bc1a36ae76c)
+       (CONTAINABLE shelf_1b04009a-1eca-45e6-b7e9-ff45d9c9c66b)
+       (CONTAINABLE counter_top_28015b23-9157-487b-9ae8-d8a9422aff79)
+       (CONTAINABLE toilet_826e23f3-f696-4396-b2c2-67f97a6932e7)
+       (CONTAINABLE side_table_69a9e5c3-243a-4646-adb6-6a6d716cb5cc)
+       (GRASPABLE remote_control_ec899fed-336a-4361-ad41-ae358bbb5084)
+       (CONTAINABLE counter_top_9ed28b2a-886e-42dd-aa4b-a7f4b797dc62)
+       (GRASPABLE bottle_f562f73a-a1d5-4e49-965c-88e16e28fe9c)
+       (GRASPABLE bottle_4cfa7800-de3a-46bb-91b7-eeded810adbb)
+       (GRASPABLE desk_lamp_115e2815-3bba-4588-a96c-eb19aba97498)
+       (CONTAINABLE sofa_9616f5e1-3606-48c2-82fb-26670f0c4ffd)
+       (CONTAINABLE side_table_d0e6fc60-cdfe-4d31-bef0-1e45ec88ce31)
+       (CONTAINABLE table_58aa5359-1998-42f2-9f01-b2226b2ba9ae)
+       (GRASPABLE house_plant_be1a505c-1717-4d59-9b61-eeaeb07d4855)
+       (GRASPABLE pencil_114c57a3-e013-4382-9b07-5fd86d33fe7b)
+       (GRASPABLE pencil_0b0ac670-af8a-44db-a2aa-c2cc8ffbf358)
+       (CONTAINABLE side_table_cd16a346-cb0c-4551-8f3b-958b6386c99d)
+       (GRASPABLE legos_1cb7e813-8982-4882-b581-23541d84dd25)
+       (CONTAINABLE counter_top_9f9d0d6a-7017-4e40-91a5-3e3363c9f7ae)
+       (GRASPABLE spray_bottle_40554863-7cb2-464c-9d82-9fe8fc4e9254)
+       (GRASPABLE bottle_05d061d3-b083-40e2-9f99-0426c3344001)
+       (GRASPABLE knife_feb91dc9-e418-48ce-a9b1-b968b1d6d1e1)
+       (CONTAINABLE garbage_can_b5373b49-6c42-4a15-97a9-a058c07e2e95)
+       (GRASPABLE spoon_45bd0ad9-afcb-476e-85b0-b2b6d80f65a5)
+       (GRASPABLE cup_2568fff3-a419-42f2-936b-96e7025ff01f)
+       (GRASPABLE pencil_34f30681-7cfa-484d-a054-6a5e429c416f)
+       (GRASPABLE knife_e8da75a7-b7e7-4e3a-b9ff-a5b2e0177629)
+       (GRASPABLE salt_shaker_487986ea-9779-4d98-9c44-eca31d030dd7)
+       (GRASPABLE knife_37e51e71-cdbd-49c5-a574-3f9a0c38be5b)
+       (CONTAINABLE table_3e269624-7055-4d4a-a3ba-979ae855d94d)
+       (GRASPABLE pan_6265d6de-9fc9-4fad-a778-0ca5c0a104ac)
+       (GRASPABLE knife_4483d089-f867-4ae2-b76a-6a0f20058afb)
+       (CONTAINABLE top_cabinet_e916e887-e119-4e9a-8092-a8f75a86362b)
+       (GRASPABLE desk_lamp_32400913-c94a-490e-9082-015a6fe8a404)
+       (GRASPABLE potato_fa91ccf6-5b0a-4c44-b95d-5479e24523b0)
+       (GRASPABLE towel_roll_08f9379a-fb9c-4a72-b759-3568dcf37929)
+       (CONTAINABLE counter_top_59ffe842-cc10-49f7-8fc6-62dc713bb18b)
+       (CONTAINABLE tv_stand_123f218e-037e-4b4f-a765-0e80661eef8c)
+       (CONTAINABLE fridge_0abac7b3-0d90-467c-b206-6860632da0da)
+       (CONTAINABLE toilet_6dbcc642-6347-4dee-a056-124260d9bf33)
+       (CONTAINABLE top_cabinet_a0d89750-8100-487d-8337-ed21f21b628c)
+       (GRASPABLE laptop_9e842b3b-8d93-4d07-a4b6-15d43dbdc4d4)
+       (CONTAINABLE sink_c82c6197-e65e-4002-b3b6-26666d72c7cf)
+       (GRASPABLE ladle_9c4e36e1-c8bb-4b88-a6f5-f42fcb480fb4)
+       (CONTAINABLE counter_top_27528a15-b05c-46b1-971d-64144a5591dd)
+       (GRASPABLE towel_roll_5ca7193d-cb6a-410f-9ea7-649f21a415ba)
+       (GRASPABLE cup_99edc9e4-5666-4fbb-8ad6-39663e42c3ef)
+       (GRASPABLE knife_b79e6b4e-2061-4491-9a98-fb2428339e8a)
+       (CONTAINABLE counter_top_70f42e62-a475-476f-aa81-996c93a25ebc)
+       (GRASPABLE knife_481e705a-f4dd-40e9-b050-3ecba768cb99)
+       (CONTAINABLE top_cabinet_7b8ced33-89c8-4e5a-b9ef-a38d1806676f)
+       (GRASPABLE bottle_4e8b78e7-b92a-4627-98ad-fd679b376c71)
+       (CONTAINABLE counter_top_78fddbd3-4141-49cd-9d27-302c35b443ef)
+       (GRASPABLE soap_bottle_fa22ae59-791a-45ac-8848-603f6577057b)
+       (GRASPABLE bottle_d1cc4741-5f7a-4696-a83e-76c07c1189db)
+       (GRASPABLE bottle_50c08db5-9856-4893-88cf-99513d197c40)
+       (GRASPABLE soap_bottle_69137a40-9bd1-49bc-85c9-6000507248a7)
+       (CONTAINABLE shelving_unit_222d0dd5-1e83-4408-b90b-2f420e3ff6fc)
+       (GRASPABLE dishtowel_21f3ddad-f869-4241-bb63-f98e2a5399ba)
+       (GRASPABLE coffee_machine_0ed7a10e-e157-4021-a78c-4fb953166a7a)
+       (CONTAINABLE tv_stand_0d49a0e6-16af-45db-9f5c-61af4a352935)
+       (GRASPABLE flour_c5ee228b-7ad3-4999-8d6a-1de2e21f2f19)
+       (GRASPABLE salt_shaker_2d9fe15c-0db8-425c-ae5b-bcd28260190f)
+       (GRASPABLE bottle_70375f36-fe31-49a4-bf75-182664a0348f)
+       (GRASPABLE yogurt_a3b895b6-4d40-4bc6-b2b5-a33e2704bcd7)
+       (GRASPABLE microwave_bc332406-071f-42fb-8224-508a08ee2546)
+       (GRASPABLE bottle_41efa7d1-7d49-49a8-9f11-c68ce023c59b)
+       (GRASPABLE pot_11cdb349-513f-4f62-8e3c-e9843d8ef200)
+       (GRASPABLE watch_799574c4-9753-4208-bddd-688ca360de97)
+       (GRASPABLE laptop_7b26693b-ccc7-4777-a957-6fbb306e0890)
+       (GRASPABLE knife_3024e385-f4b5-4436-b618-6cb1bf0c3cb1)
+       (GRASPABLE milk_9497a6c1-6d39-4b21-9404-b4ffe0fbe5c8)
+       (GRASPABLE jar_00c4fc5f-2701-4ef5-a947-b641aabe05ad)
+       (GRASPABLE remote_control_cb0cf723-733e-4e43-9281-9dff10d348a9)
+       (GRASPABLE action_figure_5c0eb900-151e-446c-aca4-b096db6c6328)
+       (close coffee_table_8eef75f4-c553-458c-b84b-4bb24387833e knife_5457f7df-fbf1-4260-8450-27e0227aa6bc)
+       (close coffee_table_8eef75f4-c553-458c-b84b-4bb24387833e knife_93d60e81-975d-409e-a4b8-ee6b66272921)
+       (close coffee_table_8eef75f4-c553-458c-b84b-4bb24387833e bottle_b586dbbc-f2f5-4a8e-adc5-42cc4bef3b6a)
+       (close coffee_table_8eef75f4-c553-458c-b84b-4bb24387833e house_plant_60253d56-a188-4a4a-9749-3077b81df685)
+       (close chair_c21f00d5-d149-42c4-862f-41af33366893 knife_cb6162f1-4b92-46d0-b5a3-9a6c4b69f58e)
+       (close side_table_e3b2a469-03f6-4a6f-8cd7-1a9b6e2ef62c knife_5457f7df-fbf1-4260-8450-27e0227aa6bc)
+       (close table_0f9a1034-5e88-4c4d-8102-73957d34872c knife_5457f7df-fbf1-4260-8450-27e0227aa6bc)
+       (close fridge_1119db1e-363f-4e1f-a388-2fd2f1d87177 knife_491339ae-a8cb-44a6-9437-afd0862463f7)
+       (close side_table_3a12971a-7da2-44fe-b00f-02c0260577a9 ladle_38a1153e-018b-4bab-9bdf-461badcf87e0)
+       (close side_table_3a12971a-7da2-44fe-b00f-02c0260577a9 alarm_clock_f34ef4b6-f57e-4a45-99eb-cb2d1f9e8b8b)
+       (close shelf_30a3169b-c912-4fc0-b369-26eea46f2bc9 knife_f34dbd05-6238-4296-a00d-0a30689be133)
+       (close side_table_2029e6a4-a23d-470b-963b-9607ee4b98f7 house_plant_28f06d40-052e-4c94-af35-d1bb1c9cb816)
+       (close side_table_2029e6a4-a23d-470b-963b-9607ee4b98f7 milk_4da52b01-d82e-4131-8164-6e3e9014eab2)
+       (close side_table_2029e6a4-a23d-470b-963b-9607ee4b98f7 box_of_tissues_f119980e-3f14-48d9-a789-116c8b80d2f8)
+       (close side_table_2029e6a4-a23d-470b-963b-9607ee4b98f7 desk_lamp_e3256470-1193-429c-a91b-daf10a86846b)
+       (close side_table_2029e6a4-a23d-470b-963b-9607ee4b98f7 house_plant_bb0f11ba-2ea4-42d3-b1a1-86a8b4869ebf)
+       (close side_table_2029e6a4-a23d-470b-963b-9607ee4b98f7 laptop_31cdfd3b-f86b-46c4-88f4-42a1c6a63713)
+       (close side_table_2029e6a4-a23d-470b-963b-9607ee4b98f7 desk_lamp_bf8c63d2-df78-4ea5-a4b4-85041bca2479)
+       (close side_table_2029e6a4-a23d-470b-963b-9607ee4b98f7 fork_dacf84a5-8c6a-4f19-9f29-0f471a748f46)
+       (close shelf_966e796c-a541-474e-ae7b-18d97bb6dd33 desk_lamp_bf8c63d2-df78-4ea5-a4b4-85041bca2479)
+       (close desk_26383d1c-ab77-456b-b7ef-245b54c063e8 milk_4da52b01-d82e-4131-8164-6e3e9014eab2)
+       (close counter_top_ba72e9d5-efb2-400d-9ef7-289c5da34914 box_of_tissues_f119980e-3f14-48d9-a789-116c8b80d2f8)
+       (close sofa_dbe9dcf3-6e7d-4575-ac55-4f3fe6e7af21 bottle_6489917d-2ed9-4184-9a52-2cc89d35e267)
+       (close counter_top_16ccc220-3785-45fb-98bb-0a8c6fcf682d knife_30be867b-d633-40ee-9aa5-2828211ead88)
+       (close counter_top_16ccc220-3785-45fb-98bb-0a8c6fcf682d mug_5fe60726-8897-4ecc-a482-e74e1ca3b8b1)
+       (close counter_top_16ccc220-3785-45fb-98bb-0a8c6fcf682d cup_32fcee20-46a6-41cd-ab72-faf05512cd0b)
+       (close counter_top_16ccc220-3785-45fb-98bb-0a8c6fcf682d cup_0af8a3b9-6238-4793-8e6c-56d81e4e7df6)
+       (close counter_top_16ccc220-3785-45fb-98bb-0a8c6fcf682d bottle_12f8d040-a87b-4620-be40-01a753d26e85)
+       (close counter_top_16ccc220-3785-45fb-98bb-0a8c6fcf682d milk_68fa3da0-f6b2-4c2f-b7b5-4b8b8cbf9583)
+       (close counter_top_16ccc220-3785-45fb-98bb-0a8c6fcf682d teddy_bear_c5e900ee-0e53-495b-b91c-8c850ad90ff5)
+       (close counter_top_16ccc220-3785-45fb-98bb-0a8c6fcf682d bottle_6489917d-2ed9-4184-9a52-2cc89d35e267)
+       (close counter_top_16ccc220-3785-45fb-98bb-0a8c6fcf682d pan_994c297f-5286-40b8-9bb1-4450c9904109)
+       (close sofa_9c0fb361-5e91-4269-bc61-53dffb492e65 knife_943783bf-ae4c-4fed-baa3-ebd145fb5197)
+       (close side_table_001e57b3-f6d3-43b6-9554-0840eb1ee206 desk_lamp_80228de3-c89c-4e36-8f09-d12430dd146e)
+       (close side_table_001e57b3-f6d3-43b6-9554-0840eb1ee206 desk_lamp_c6f9b244-076e-4a7d-9c4c-26b0fdd7cafd)
+       (close side_table_001e57b3-f6d3-43b6-9554-0840eb1ee206 knife_87d65535-eddc-4a79-80c2-48351450565b)
+       (close side_table_001e57b3-f6d3-43b6-9554-0840eb1ee206 house_plant_3ddbe01e-a288-4e9b-9ed2-03084760f27d)
+       (close side_table_001e57b3-f6d3-43b6-9554-0840eb1ee206 laptop_7ec06eb0-3cca-43a8-8677-b705d5f6b243)
+       (close shelf_15833ca2-6cca-4453-8c17-d03173055711 desk_lamp_c6f9b244-076e-4a7d-9c4c-26b0fdd7cafd)
+       (close shelf_15833ca2-6cca-4453-8c17-d03173055711 knife_87d65535-eddc-4a79-80c2-48351450565b)
+       (close shelf_15833ca2-6cca-4453-8c17-d03173055711 laptop_7ec06eb0-3cca-43a8-8677-b705d5f6b243)
+       (close sofa_4f09ad21-896f-4efd-8927-ecdc7ecd8b60 knife_cb6162f1-4b92-46d0-b5a3-9a6c4b69f58e)
+       (close sofa_4f09ad21-896f-4efd-8927-ecdc7ecd8b60 knife_0d2a074b-9691-491b-bb7c-e5ecabcb5391)
+       (close sofa_4f09ad21-896f-4efd-8927-ecdc7ecd8b60 toy_375ed765-f954-49d9-81d9-1a3effff67f1)
+       (close sofa_4f09ad21-896f-4efd-8927-ecdc7ecd8b60 teddy_bear_ccc6599d-8144-46fe-b4fd-0b27227e5fe1)
+       (close sofa_4f09ad21-896f-4efd-8927-ecdc7ecd8b60 house_plant_6f9e2950-cf49-408e-8dfd-97e9d6a4075b)
+       (close sofa_4f09ad21-896f-4efd-8927-ecdc7ecd8b60 bottle_8eb24a41-8eb3-4236-b4e2-4772e797605b)
+       (close sofa_4f09ad21-896f-4efd-8927-ecdc7ecd8b60 pencil_114c57a3-e013-4382-9b07-5fd86d33fe7b)
+       (close sofa_4f09ad21-896f-4efd-8927-ecdc7ecd8b60 pencil_0b0ac670-af8a-44db-a2aa-c2cc8ffbf358)
+       (close coffee_table_bbaf1f1e-cf66-4b7b-9b47-a8d8d285c251 knife_30be867b-d633-40ee-9aa5-2828211ead88)
+       (close coffee_table_bbaf1f1e-cf66-4b7b-9b47-a8d8d285c251 mug_5fe60726-8897-4ecc-a482-e74e1ca3b8b1)
+       (close coffee_table_bbaf1f1e-cf66-4b7b-9b47-a8d8d285c251 cup_32fcee20-46a6-41cd-ab72-faf05512cd0b)
+       (close coffee_table_bbaf1f1e-cf66-4b7b-9b47-a8d8d285c251 cup_0af8a3b9-6238-4793-8e6c-56d81e4e7df6)
+       (close coffee_table_bbaf1f1e-cf66-4b7b-9b47-a8d8d285c251 bottle_12f8d040-a87b-4620-be40-01a753d26e85)
+       (close coffee_table_bbaf1f1e-cf66-4b7b-9b47-a8d8d285c251 milk_68fa3da0-f6b2-4c2f-b7b5-4b8b8cbf9583)
+       (close coffee_table_bbaf1f1e-cf66-4b7b-9b47-a8d8d285c251 teddy_bear_c5e900ee-0e53-495b-b91c-8c850ad90ff5)
+       (close coffee_table_bbaf1f1e-cf66-4b7b-9b47-a8d8d285c251 bottle_6489917d-2ed9-4184-9a52-2cc89d35e267)
+       (close coffee_table_bbaf1f1e-cf66-4b7b-9b47-a8d8d285c251 pan_994c297f-5286-40b8-9bb1-4450c9904109)
+       (close coffee_table_bbaf1f1e-cf66-4b7b-9b47-a8d8d285c251 knife_51694b2e-e81f-4b44-8158-a91496e68ce8)
+       (close coffee_table_bbaf1f1e-cf66-4b7b-9b47-a8d8d285c251 knife_50b3e089-abe7-4a50-80c3-00cd12d53556)
+       (close counter_top_dacbbf93-78bb-42f0-8f1f-c93188751a62 knife_491339ae-a8cb-44a6-9437-afd0862463f7)
+       (close counter_top_28015b23-9157-487b-9ae8-d8a9422aff79 knife_e0047027-67d5-46bb-bfe0-1bc1a36ae76c)
+       (close side_table_69a9e5c3-243a-4646-adb6-6a6d716cb5cc remote_control_ec899fed-336a-4361-ad41-ae358bbb5084)
+       (close side_table_d0e6fc60-cdfe-4d31-bef0-1e45ec88ce31 desk_lamp_115e2815-3bba-4588-a96c-eb19aba97498)
+       (close side_table_cd16a346-cb0c-4551-8f3b-958b6386c99d knife_cb6162f1-4b92-46d0-b5a3-9a6c4b69f58e)
+       (close side_table_cd16a346-cb0c-4551-8f3b-958b6386c99d house_plant_6f9e2950-cf49-408e-8dfd-97e9d6a4075b)
+       (close side_table_cd16a346-cb0c-4551-8f3b-958b6386c99d pencil_114c57a3-e013-4382-9b07-5fd86d33fe7b)
+       (close side_table_cd16a346-cb0c-4551-8f3b-958b6386c99d pencil_0b0ac670-af8a-44db-a2aa-c2cc8ffbf358)
+       (close garbage_can_b5373b49-6c42-4a15-97a9-a058c07e2e95 basket_ball_cbe61aad-93af-4cb7-9acb-3aa8844eb4c8)
+       (close garbage_can_b5373b49-6c42-4a15-97a9-a058c07e2e95 knife_feb91dc9-e418-48ce-a9b1-b968b1d6d1e1)
+       (close table_3e269624-7055-4d4a-a3ba-979ae855d94d smartphone_0ab722be-9b47-4fcf-8d79-87449cd8643d)
+       (close table_3e269624-7055-4d4a-a3ba-979ae855d94d bottle_242653cd-13f6-43bb-a31e-f91bdc31e9d1)
+       (close table_3e269624-7055-4d4a-a3ba-979ae855d94d cup_6cd691e5-00e9-4578-a944-358efd426c83)
+       (close table_3e269624-7055-4d4a-a3ba-979ae855d94d soda_41ed6081-ed24-485c-acfb-7e651d0499c2)
+       (close table_3e269624-7055-4d4a-a3ba-979ae855d94d spray_bottle_d20937a9-0b0f-45c2-8c7e-fa791230160b)
+       (close table_3e269624-7055-4d4a-a3ba-979ae855d94d fork_f41aedfc-8e61-4e00-81c6-3134fa667a64)
+       (close table_3e269624-7055-4d4a-a3ba-979ae855d94d tomato_19f1bf21-cfa3-4b32-9d35-4747134cf151)
+       (close table_3e269624-7055-4d4a-a3ba-979ae855d94d grapes_8b8b5f81-f51d-47b4-84ab-49af8181f649)
+       (close table_3e269624-7055-4d4a-a3ba-979ae855d94d spoon_45bd0ad9-afcb-476e-85b0-b2b6d80f65a5)
+       (close table_3e269624-7055-4d4a-a3ba-979ae855d94d cup_2568fff3-a419-42f2-936b-96e7025ff01f)
+       (close table_3e269624-7055-4d4a-a3ba-979ae855d94d salt_shaker_487986ea-9779-4d98-9c44-eca31d030dd7)
+       (close table_3e269624-7055-4d4a-a3ba-979ae855d94d knife_37e51e71-cdbd-49c5-a574-3f9a0c38be5b)
+       (close table_3e269624-7055-4d4a-a3ba-979ae855d94d desk_lamp_32400913-c94a-490e-9082-015a6fe8a404)
+       (close sink_c82c6197-e65e-4002-b3b6-26666d72c7cf ladle_9c4e36e1-c8bb-4b88-a6f5-f42fcb480fb4)
+       (close sink_c82c6197-e65e-4002-b3b6-26666d72c7cf cup_99edc9e4-5666-4fbb-8ad6-39663e42c3ef)
+       (close counter_top_27528a15-b05c-46b1-971d-64144a5591dd towel_roll_5ca7193d-cb6a-410f-9ea7-649f21a415ba)
+       (free robo)
+    )
+)
+Provide me with the output PDDL goal specification without further explanation.
