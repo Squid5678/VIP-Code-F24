@@ -14,7 +14,7 @@ model:
 
 # Prompt
 test:
-  prompt_file: "prompts/test.txt"
+  prompt_file: "prompts/prompt09.txt"
 
 # Performance
 metrics:
