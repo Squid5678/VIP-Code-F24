@@ -8,14 +8,15 @@ api:
 
 # Model
 model:
-  name: "llama3.2"
+  name: "llama3.1"
   parameters:
     stream: false
 
 # Prompt
 test:
-  prompt_file: "prompts/prompt02.txt"
+  prompt_file: "prompts/prompt05.txt"
 
 # Performance
 metrics:
   show_tokens_per_second: true
+  show_token_count: true 
