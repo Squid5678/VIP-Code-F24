@@ -1,0 +1,7 @@
+(declare(rearrangelfree_robo)
+(:goal (and 
+     (table-on shelf1))
+)
+Time to first token: 1.5484
+Tokens Per Second: 45.714285714285715
+Response Token Count: 23

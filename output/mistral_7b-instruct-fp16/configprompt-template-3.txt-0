@@ -1,0 +1,34 @@
+```
+(define (domain mydomain)
+  (:types sofa Apple DeskLamp GarbageCan Bottle Watch Spray Knife BoxOfTissues Robo)
+  (:init
+    (and
+      (exists (s sofa))
+      (exists (a Apple))
+      (exists (d DeskLamp))
+      (exists (g GarbageCan))
+      (exists (b Bottle))
+      (exists (w Watch))
+      (exists (s Spray))
+      (exists (k Knife))
+      (exists (t BoxOfTissues))
+      (exists (r Robo))
+    )
+  )
+  (:goals
+    (and
+      (not (on sofa a))
+      (not (on sofa d))
+      (not (on sofa g))
+      (not (on sofa w))
+      (not (on sofa s))
+      (not (on sofa k))
+      (not (on sofa t))
+      (not (on Robo robot))
+    )
+  )
+)
+```
+Time to first token: 11.5852
+Tokens Per Second: 26.029902118963108
+Response Token Count: 199

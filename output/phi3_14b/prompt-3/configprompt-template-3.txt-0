@@ -1,0 +1,10 @@
+```lisp
+(AND
+    (robot_at coffee_table_107c28dd-7099-4199-baa1-c001ff274111)
+    (holding bottle_e6199818-5446-4e6e-884d-ed52ebf9cede)
+    (free garbage_can_b9bd798a-59f1-4751-bf94-1e1dec6eb00f)
+    (robo_holding empty)
+)
+Time to first token: 6.9553
+Tokens Per Second: 56.552262090483616
+Response Token Count: 98

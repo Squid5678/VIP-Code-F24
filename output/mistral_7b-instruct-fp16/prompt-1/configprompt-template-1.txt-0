@@ -1,0 +1,17 @@
+Here is the PDDL goal specification for the given knowledge base:
+```
+(define (goal go_to_store)
+  (:parameters person ?p ?location)
+  (:precondition (and (has ?p "car") (at ?p "home"))
+  (:action go ?p ?location
+    :parameters (?v "vehicle")
+    :effects (and (at ?p ?location) (not (at ?p "home")))
+  )
+  (:goal (and (at ?p ?location) (has ?p "money")))
+)
+```
+This goal specification defines a single action called `go`, which takes a person and a location as parameters. The action has two effects: it moves the person to the specified location, and it removes them from their home location. The precondition for the action is that the person has a car and is at home.
+The goal of the action is defined by the `goal` keyword, which specifies what state should be achieved after the action is executed. In this case, the goal is to have the person in possession of money (presumably from shopping at the specified location).
+Time to first token: 30.3944
+Tokens Per Second: 27.065966862200266
+Response Token Count: 227

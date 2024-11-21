@@ -1,0 +1,52 @@
+```pddl
+(define (domain Robo)
+  (:types Object Action)
+  (:constants <robot> "Robot")
+  (:predicates
+    (object? obj Object)
+    (action? act Action)
+    (in-room? obj Room)
+    (contains? obj container Object)
+    (empty? container Object)
+    (on? obj container)
+    (off? obj container)
+    (grabbing? obj container)
+    (releasing? obj container)
+    (at? obj pos Position)
+    (moving? obj new_pos Position)
+    (stationary? obj Position)
+    (facing? obj direction Direction)
+    (turning? obj dir_change Direction)
+    (connected? obj network Network)
+    (disconnected? obj network Network)
+  )
+  (:parameters
+    (obj Object)
+    (act Action)
+    (container Object)
+    (pos Position)
+    (dir Direction)
+    (netw Network)
+  )
+  (:init
+    (in-room? <robot> <kitchen>)
+    (contains? <robot> <bottle>)
+    (grabbing? <robot> <bottle>)
+    (moving? <robot> <kitchen>)
+    (facing? <robot> north)
+  )
+  (:goal
+    (and (at? <robot> <bedroom>)
+         (empty? <bathroom>)
+         (contains? <robot> <shampoo>)
+         (grabbing? <robot> <shampoo>)
+         (releasing? <robot> <shampoo>)
+         (moving? <robot> <bathroom>)
+         (facing? <robot> east)
+    )
+  )
+)
+```
+Time to first token: 19.8234
+Tokens Per Second: 25.64102564102564
+Response Token Count: 346

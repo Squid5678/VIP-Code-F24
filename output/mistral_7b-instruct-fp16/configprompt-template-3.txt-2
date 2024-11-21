@@ -1,0 +1,50 @@
+```
+(define (type Object) 
+  (and (numberp ?x) ?x >= 0)
+)
+
+(define (predicate contains ?x ?y)
+  (and (object ?x) (object ?y) (not (or (eq ?x ?y) (eq ?y ?x))))
+)
+
+(define (action pickup-object ?x)
+  (cond ((contains ?x "garbage_can")
+         (tuple pickup ?x))
+        ((contains ?x "watch")
+         (tuple pickup ?x))
+        ((contains ?x "bottle")
+         (tuple pickup ?x))
+        ((contains ?x "spray_bottle")
+         (tuple pickup ?x))
+        ((contains ?x "box_of_tissues")
+         (tuple pickup ?x))
+        ((contains ?x "pencil")
+         (tuple pickup ?x))
+        (else
+         (tuple fail))))
+
+(define (init)
+  (tuple
+    (and (object "garbage_can") (object "watch") (object "bottle") (object "spray_bottle") (object "box_of_tissues") (object "pencil"))
+    (not (contains "garbage_can" "robo"))
+    (not (contains "watch" "robo"))
+    (not (contains "bottle" "robo"))
+    (not (contains "spray_bottle" "robo"))
+    (not (contains "box_of_tissues" "robo"))
+    (not (contains "pencil" "robo"))
+    (object "robo")
+  ))
+
+(define (goal)
+  (and (not (contains "garbage_can" "robo"))
+       (not (contains "watch" "robo"))
+       (not (contains "bottle" "robo"))
+       (not (contains "spray_bottle" "robo"))
+       (not (contains "box_of_tissues" "robo"))
+       (not (contains "pencil" "robo"))
+       (object "robo")
+  ))
+```
+Time to first token: 21.7808
+Tokens Per Second: 26.269611890999172
+Response Token Count: 424

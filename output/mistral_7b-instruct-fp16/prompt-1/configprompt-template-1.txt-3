@@ -1,0 +1,90 @@
+```
+(define (domain robo-domain)
+  (:types object)
+  (:predicates
+    (on ?o1 ?o2)
+    (at ?o ?loc)
+    (has ?o ?p)
+    (clear ?loc)
+    (pickup ?o ?p)
+    (putdown ?o ?p)
+  )
+  (:action pickup
+    :parameters (?o object ?p object)
+    :precondition (and (on ?o ?p) (at ?o ?loc))
+    :effect (and (not (on ?o ?p)) (clear ?loc))
+  )
+  (:action putdown
+    :parameters (?o object ?p object)
+    :precondition (not (on ?o ?p))
+    :effect (and (on ?o ?p) (at ?o ?loc))
+  )
+  (:action move
+    :parameters (?o object ?loc loc)
+    :precondition (at ?o ?loc)
+    :effect (at ?o ?loc)
+  )
+  (:action pickup_all
+    :parameters (?p object ?loc loc)
+    :precondition (clear ?loc)
+    :effect (and (not (clear ?loc)) (on ?p ?loc))
+  )
+  (:action putdown_all
+    :parameters (?p object ?loc loc)
+    :precondition (not (on ?p ?loc))
+    :effect (and (on ?p ?loc) (clear ?loc))
+  )
+)
+
+(define (init robo-domain)
+  (:objects
+    (robo robot)
+    (table table)
+    (bottle bottle)
+    (can can)
+    (knife knife)
+    (desk desk)
+    (butter_knife butter_knife)
+    (cooktop cooktop)
+    (pot pot)
+  )
+  (:locations
+    (counter counter)
+    (table table)
+    (shelf shelf)
+    (sink sink)
+    (robot robot)
+  )
+  (:initial
+    (on robo can)
+    (at robo counter)
+    (has robo knife)
+    (clear shelf)
+    (clear sink)
+  )
+)
+
+(define (goal robo-domain)
+  (:types object)
+  (:predicates (at ?o ?loc) (on ?o ?p) (has ?o ?p))
+  (:action pickup
+    :parameters (?o object ?p object)
+    :precondition (and (on ?o ?p) (at ?o ?loc))
+    :effect (and (not (on ?o ?p)) (clear ?loc))
+  )
+  (:action putdown
+    :parameters (?o object ?p object)
+    :precondition (not (on ?o ?p))
+    :effect (and (on ?o ?p) (at ?o ?loc))
+  )
+  (:action move
+    :parameters (?o object ?loc loc)
+    :precondition (at ?o ?loc)
+    :effect (at ?o ?loc)
+  )
+  (:goal pickup bottle sink)
+)
+```
+Time to first token: 31.9619
+Tokens Per Second: 25.62030771302562
+Response Token Count: 638

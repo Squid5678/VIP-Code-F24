@@ -1,0 +1,40 @@
+```
+(define (goal)
+  (:domain "Robotics")
+  (:types object location action)
+  (:init
+    (object-in "kitchen" bottle)
+    (object-in "kitchen" knife)
+    (object-in "kitchen" smartphone)
+    (object-in "kitchen" ladle)
+    (object-in "counter" coffee maker)
+    (object-in "counter" fridge)
+    (object-in "table" table)
+    (object-in "desk" desk lamp)
+    (object-in "cooktop" cooktop)
+    (action-available "pour")
+    (action-available "eat")
+    (action-available "use")
+    (action-available "wash")
+    (action-available "clean")
+    (action-available "turn off")
+    (action-available "switch on")
+  )
+  (:goal
+    (and (object-at bottle kitchen)
+         (not (object-at knife kitchen))
+         (not (object-at smartphone kitchen))
+         (not (object-at ladle kitchen))
+         (not (object-at coffee maker kitchen))
+         (not (object-at fridge kitchen))
+         (not (object-at table kitchen))
+         (not (object-at desk lamp kitchen))
+         (not (object-at cooktop kitchen))
+         (and (not (action-performed pour))
+              (not (action-performed eat)))
+  )
+)
+```
+Time to first token: 16.5763
+Tokens Per Second: 25.61723990295419
+Response Token Count: 280

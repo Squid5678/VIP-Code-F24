@@ -1,0 +1,11 @@
+```pddl
+(and
+  (table pencil)
+  (table bottle)
+  (on table knife)
+  (free robo)
+)
+
+Time to first token: 1.7434
+Tokens Per Second: 48.463356973995275
+Response Token Count: 29

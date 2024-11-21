@@ -1,0 +1,52 @@
+```
+(define (:domain my_domain)
+  ; Define actions and their parameters here
+  (:action pick_up
+    :parameters (?item ?location)
+    :precondition (and (exists ?x (object ?item)) (exists ?y (location ?x)) (not (contains ?y ?item)))
+    :effect (and (not (contains ?y ?item)) (contains ?x ?item))
+  )
+  
+  (:action put_down
+    :parameters (?item ?location)
+    :precondition (and (exists ?x (object ?item)) (exists ?y (location ?x)) (contains ?y ?item))
+    :effect (and (not (contains ?y ?item)) (contains ?x ?item))
+  )
+  
+  (:action move_to
+    :parameters (?item ?location)
+    :precondition (and (exists ?x (object ?item)) (exists ?y (location ?x)) (contains ?y ?item))
+    :effect (and (not (contains ?y ?item)) (contains ?x ?item))
+  )
+  
+  ; Define objects and their properties here
+  (:types object location)
+  
+  (:objects table knife desk_lamp cooktop action_figure butter_knife coffee_maker)
+  
+  ; Define locations here
+  (:locations counter table cooktop desk_lamp)
+  
+  ; Define initial state here
+  (:initial-state
+    (on table knife)
+    (on cooktop action_figure)
+    (on desk_lamp coffee_maker)
+    (on counter coffee_maker)
+    (contains butter_knife table)
+  )
+  
+  ; Define goal state here
+  (:goal-state
+    (not (contains knife table))
+    (on table action_figure)
+    (on cooktop action_figure)
+    (on desk_lamp coffee_maker)
+    (on counter coffee_maker)
+    (contains butter_knife counter)
+  )
+)
+```
+Time to first token: 20.5793
+Tokens Per Second: 25.712262352236205
+Response Token Count: 398

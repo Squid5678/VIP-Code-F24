@@ -1,0 +1,32 @@
+Here's the PDDL goal specification for the given scenario:
+```css
+(define (goal SetUp)
+  (:parameters
+    (robo String)
+  )
+  (:init
+    (in-place robo)
+  )
+  (:precondition
+    (not empty? table_1)
+    (not empty? table_2)
+    (not empty? counter_1)
+    (not empty? counter_2)
+    (not empty? knife)
+    (not empty? ladle)
+    (not empty? smartphone)
+  )
+  (:action SetUp/SetUp
+    :parameters
+      (robo String)
+    :precondition
+      (and (in-place robo) (not empty? table_1) (not empty? table_2) (not empty? counter_1) (not empty? counter_2) (not empty? knife) (not empty? ladle) (not empty? smartphone))
+    :effect
+      (not (in-place robo))
+  )
+)
+```
+Note that this specification assumes that the objects and their properties are already defined in the domain ontology.
+Time to first token: 12.3
+Tokens Per Second: 26.57741903730682
+Response Token Count: 229

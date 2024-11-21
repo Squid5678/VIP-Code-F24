@@ -1,0 +1,13 @@
+```
+(define (goal <start_state> <desired_final_state>)
+  (:domain <domain_name>)
+  (:types <type_list>)
+  (:predicates <predicate_list>)
+  (:init <initialization_function>)
+  (:goal <goal_function>)
+)
+```
+where `<start_state>` and `<desired_final_state>` are the initial and final states of the robot, respectively. The `<domain_name>`, `<type_list>`, and `<predicate_list>` describe the specific domain and types of objects involved in the goal. The `<initialization_function>` specifies the initial state of the robot, and the `<goal_function>` defines the desired final state.
+Time to first token: 9.7111
+Tokens Per Second: 25.359835503769705
+Response Token Count: 132

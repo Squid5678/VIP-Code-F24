@@ -1,0 +1,40 @@
+```
+(define (:domain "Robo")
+  (:types robo object)
+  (:init
+      (create-robot robo)
+      (on-table bottle_a15d3b9e-f827-4036-aa91-4c9b09e4f9f2)
+      (on-table table_ff94dcb7-e210-4168-b0d9-7307c5768a2c)
+      (on-table knife_499feac5-430e-441d-8768-29c3febdad0e)
+      (on-table knife_b0995f6e-5d43-400f-a548-50764f45783d)
+      (on-table knife_b58199e2-5e6d-4a54-b130-442df0b2079f)
+      (on-table knife_662366d6-62f8-45b9-aa85-743648832470)
+      (on-table knife_778280cc-86ea-4d1d-b00f-ac1ce8678ef1)
+      (on-table knife_959b1111-4ba0-4a94-a1cf-d2e4aa38a728)
+      (on-table desk_lamp_e2e19f7f-f38f-48b0-9d1b-e1f9cbf9d905)
+      (on-table cooktop_1a6e4db6-3459-4d36-a622-7ca95b438937)
+      (on-table action_figure_2afd2972-9e99-4eac-9c18-0528f4751d57)
+      (on-table bottle_8ec556b4-38ab-4110-a85d-089e1e6ceaa6)
+      (on-table butter_knife_c8aec558-d533-45ca-9fda-0f0c94ae5ba9)
+  )
+
+  (:goal (and
+          (in-room robo object)
+          (clear-table bottle_a15d3b9e-f827-4036-aa91-4c9b09e4f9f2)
+          (clear-table table_ff94dcb7-e210-4168-b0d9-7307c5768a2c)
+          (clear-table knife_499feac5-430e-441d-8768-29c3febdad0e)
+          (clear-table knife_b0995f6e-5d43-400f-a548-50764f45783d)
+          (clear-table knife_b58199e2-5e6d-4a54-b130-442df0b2079f)
+          (clear-table knife_662366d6-62f8-45b9-aa85-743648832470)
+          (clear-table knife_778280cc-86ea-4d1d-b00f-ac1ce8678ef1)
+          (clear-table knife_959b1111-4ba0-4a94-a1cf-d2e4aa38a728)
+          (clear-table desk_lamp_e2e19f7f-f38f-48b0-9d1b-e1f9cbf9d905)
+          (clear-table cooktop_1a6e4db6-3459-4d36-a622-7ca95b438937)
+          (clear-table action_figure_2afd2972-9e99-4eac-9c18-0528f4751d57)
+          (clear-table bottle_8ec556b4-38ab-4110-a85d-089e1e6ceaa6)
+          (clear-table butter_knife_c8aec558-d533-45ca-9fda-0f0c94ae5ba9)
+        )))
+```
+Time to first token: 48.5174
+Tokens Per Second: 25.812743823146945
+Response Token Count: 838
