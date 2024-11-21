@@ -1,0 +1,9 @@
+(define (goal)
+  (and
+    (at robo counter-top_b74199e8-f0e9-4b17-bdbc-0fa3614f035b)
+    (at pan_880affa2-84c7-4cfd-9cf5-8d12ae616235 cooktop_929c2965-750f-4283-8296-110c252546d9)
+  )
+)
+Time to first token: 3.1169
+Tokens Per Second: 36.63709988430389
+Response Token Count: 94

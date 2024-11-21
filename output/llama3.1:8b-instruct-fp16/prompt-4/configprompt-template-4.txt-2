@@ -1,0 +1,10 @@
+(?goal 
+   (and 
+      (at table_e06ab610-6bf9-4691-9721-0ab155e2b3ab apple_d4b8610f-56b6-41d2-ae9a-63d829ad71e9)
+      (at table_fcd776f8-0526-4521-9a47-b651781cf22a knife_3722a3f3-2cec-4495-9a41-0c27a12259f5)
+      (at shelf_342e0218-a168-41aa-aea7-552a79f4bdca box_of_tissues_32011e45-3425-40ae-bfbc-2f6d6ca114af)
+   )
+)
+Time to first token: 5.2912
+Tokens Per Second: 36.28691983122363
+Response Token Count: 171

@@ -1,0 +1,10 @@
+(declare (sort objects))
+(:goal
+  (and 
+    (= (at robby coffee_table_6273f0df_8757_4b02_aee5_2178e7756601) t)
+    (= (at bottle_9e312c9f_cb2a_438a_93dd_3f326c22a2dc) coffee_table_6273f0df_8757_4b02_aee5_2178e7756601)
+  )
+)
+Time to first token: 3.4842
+Tokens Per Second: 36.86006825938566
+Response Token Count: 107

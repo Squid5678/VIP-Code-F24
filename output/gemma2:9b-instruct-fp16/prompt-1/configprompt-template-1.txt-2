@@ -1,0 +1,7 @@
+(and (not (holding coffee)) (ontable coffee) ) 
+
+
+
+Time to first token: 1.5515
+Tokens Per Second: 23.319615912208505
+Response Token Count: 14

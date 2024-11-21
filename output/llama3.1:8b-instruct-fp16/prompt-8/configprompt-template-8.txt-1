@@ -1,0 +1,11 @@
+:(not
+  (and 
+    (at-table ?t tv_stand_8d47feab-e95c-4d0b-a204-8a3cf4136ab3)
+    (at-table ?t action_figure_ed578ea7-813e-4767-9d39-421ce6f122e3)
+    (at-table ?t knife_84d1e4ca-8b7f-461d-ac67-62e0b17560ab)
+    (at-table ?t cup_073ff567-08d3-4977-b08f-fa394f97348b)
+  )
+)
+Time to first token: 4.2106
+Tokens Per Second: 37.2972972972973
+Response Token Count: 137

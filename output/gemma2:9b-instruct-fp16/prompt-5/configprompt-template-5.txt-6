@@ -1,0 +1,8 @@
+(and 
+  (at robot side_table_70bf88b9-a88c-4e71-b2f2-30e671082962) 
+  (holding knife_f11c0d5e-5c88-4b03-b652-9ff4364c51eb)
+  (free robo)
+)
+Time to first token: 4.4312
+Tokens Per Second: 26.627218934911244
+Response Token Count: 70

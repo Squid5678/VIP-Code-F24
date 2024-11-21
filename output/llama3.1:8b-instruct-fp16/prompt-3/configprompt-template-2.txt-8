@@ -1,0 +1,11 @@
+(declare
+  (?object - object)
+)
+
+(goal (and
+  (on ?object table_3e269624-7055-4d4a-a3ba-979ae855d94d)
+))
+)
+Time to first token: 1.8868
+Tokens Per Second: 34.9182763744428
+Response Token Count: 46

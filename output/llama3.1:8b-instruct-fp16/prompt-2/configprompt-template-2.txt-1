@@ -1,0 +1,5 @@
+(:goal (at robo garbage_can_b5373b49-6c42-4a15-97a9-a058c07e2e95)
+    (holding robo basket_ball_cbe61aad-93af-4cb7-9acb-3aa8844eb4c8))
+Time to first token: 2.3845
+Tokens Per Second: 35.63714902807775
+Response Token Count: 65

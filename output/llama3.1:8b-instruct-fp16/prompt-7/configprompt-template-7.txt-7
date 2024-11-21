@@ -1,0 +1,11 @@
+(declare (sort ?object object))
+(:goal (and 
+         (= (count-object kitchen) 0)
+         (= (count-object living_room) 0)
+         (= (count-object office) 1)
+         (= (count-object hallway) 0)
+         (= (count-object bedroom) 0)
+))
+Time to first token: 2.3481
+Tokens Per Second: 36.204059243006036
+Response Token Count: 65

@@ -1,0 +1,44 @@
+(close robo)
+
+
+(declare (types 
+          obj
+          obj-graspable
+          loc
+          room 
+          cup 
+          bottle
+          knife
+          fork
+          spoon
+          salt-shaker
+          ladle
+          spray-bottle
+          desk-lamp
+          smartphone
+          basket-ball
+          tomato
+          grape
+          soda
+          )
+
+(declare (predicates 
+          (at obj loc)
+          (clear obj)
+          (on-table obj loc)
+          (in-tray obj loc)
+          (on-desk obj loc)
+          (in-garbage-can obj loc)
+          (has-key robo loc)
+          (holding robo obj)
+          )
+
+(declare (functions 
+          (goal-obj obj)
+
+          )
+
+)
+Time to first token: 4.8802
+Tokens Per Second: 36.64438810785895
+Response Token Count: 158

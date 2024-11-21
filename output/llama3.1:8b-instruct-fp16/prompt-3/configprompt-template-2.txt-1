@@ -1,0 +1,9 @@
+(:goal (and 
+    (= (count ?obj (?filter (eq ?x kitchen) (objects))) 0)
+    (= (count ?obj (?filter (eq ?x bathroom) (objects))) 0)
+    (= (count ?obj (?filter (eq ?x bedroom) (objects))) 0)
+    (= (count ?obj (?filter (eq ?x living_room) (objects))) 0)
+))
+Time to first token: 2.975
+Tokens Per Second: 36.139630390143736
+Response Token Count: 87

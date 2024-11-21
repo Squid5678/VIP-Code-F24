@@ -1,0 +1,10 @@
+(and 
+  (at robo garbage_can_b9bd798a-59f1-4751-bf94-1e1dec6eb00f)
+  (holding robo knife_72628628-ae74-4a3a-8e30-14da4fd3c284)
+) 
+
+
+
+Time to first token: 4.1236
+Tokens Per Second: 26.400704018773833
+Response Token Count: 67

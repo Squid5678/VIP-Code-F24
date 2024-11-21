@@ -1,0 +1,14 @@
+(close (and 
+  (not (on obj1 table))
+  (not (on obj2 table))
+  (not (on obj3 table))
+  (not (on obj4 table))
+  (not (on obj5 table))
+  (not (on pot cooktop))
+  (not (on action_figure cooktop))
+  (not (on butter_knife counter_cde04638-c2b3-498e-ba66-7946cf0754f2))
+  (not (on bottle_8ec556b4-38ab-4110-a85d-089e1e6ceaa6 counter_cde04638-c2b3-498e-ba66-7946cf0754f2))
+))
+Time to first token: 4.8263
+Tokens Per Second: 36.64799253034547
+Response Token Count: 156

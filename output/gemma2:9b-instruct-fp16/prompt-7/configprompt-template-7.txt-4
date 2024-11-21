@@ -1,0 +1,9 @@
+(goal (and 
+  (at robot counter_top_a5e2d22e-6a6f-4021-9221-7cb795f054b2)
+)) 
+
+
+
+Time to first token: 2.8018
+Tokens Per Second: 26.202953787517867
+Response Token Count: 39

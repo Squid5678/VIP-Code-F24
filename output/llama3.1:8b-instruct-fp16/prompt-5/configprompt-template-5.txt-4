@@ -1,0 +1,9 @@
+(declare (context (robot1)))
+(:goal (and
+  (atp robot1 couch)
+  (ontable robot1 laptop)
+  (clean robot1)
+))
+Time to first token: 1.5842
+Tokens Per Second: 34.905660377358494
+Response Token Count: 36

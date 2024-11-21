@@ -1,0 +1,8 @@
+(and 
+(on-countertop microwave_72152dd1-e5d7-46b9-9068-6ce066384f16)
+(on-countertop microwave_a7fa235d-14c9-43df-8a7b-25eb4a567812) 
+(on-countertop bottle_d952ef00-dc05-41bc-bde6-48e442b78de9)
+(holding fork_d17c1066-3fc4-42dc-a7fd-20683b74b2c1) )
+Time to first token: 6.9781
+Tokens Per Second: 26.92368966066592
+Response Token Count: 118

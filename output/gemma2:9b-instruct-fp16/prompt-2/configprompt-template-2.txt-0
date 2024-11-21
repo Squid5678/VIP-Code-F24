@@ -1,0 +1,21 @@
+(and 
+(at robot kitchen)
+(holding nothing)
+(on counter_top knife)
+(in sink cup)
+(on table tomato)
+(on table grapes)
+(on table fork)
+(on table spoon)
+(on table soda)
+(on table salt_shaker)
+(on table spray_bottle)
+(on table cup)
+(on table desk_lamp)
+(on side counter_top towel_roll)
+(at robot kitchen)
+(holding nothing)
+)
+Time to first token: 31.1617
+Tokens Per Second: 26.243093922651934
+Response Token Count: 77

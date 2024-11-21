@@ -1,0 +1,5 @@
+(:goal (and (at man top_cabinet_9522ae1f-a3d8-4205-b1a7-a5130f4ddc88)
+           (at milk top_cabinet_9522ae1f-a3d8-4205-b1a7-a5130f4ddc88)))
+Time to first token: 2.5364
+Tokens Per Second: 35.08771929824562
+Response Token Count: 69

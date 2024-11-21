@@ -1,0 +1,45 @@
+(declare (sort objects Object)
+         (sort predicates Predicate))
+(defgoal
+  :name 'output
+  :formula (and
+            (= 0 (count ?x))))
+
+
+;; Objects
+(deftemplate object ((slot name) ((type Object)))
+  (deffacts init 
+    (object (name robo) (type Object)))
+  )
+
+;; Predicates
+(deftemplate pred ((slot name) ((type Predicate)))
+   (deffacts init 
+     (predicates)))
+
+;; Facts
+(deffacts init 
+  (on-table object-1 table-2)
+  (clear table-1)
+  )
+
+
+;; Actions
+(deftemplate action ((slot name) ((type Action)) ((arg ?args)))
+  (deffacts init 
+    ; ... )
+
+;; Planning knowledge
+
+(deftemplate planning-goal ((slot predicate-name) (slot expected-value))
+  (deffacts init 
+    (planning-goal (predicate-name ?predicate-name) (expected-value true))))
+
+(defplan (predicates object-1 clear table-2 on-table))
+(plan output)
+;(goal-specification pred object object object pred)
+
+(= 0 (count ?x))
+Time to first token: 6.9349
+Tokens Per Second: 37.609238451935084
+Response Token Count: 241

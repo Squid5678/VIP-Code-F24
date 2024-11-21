@@ -1,0 +1,5 @@
+(and (at robot coffee_maker) 
+      (holding robot cup))
+Time to first token: 1.4936
+Tokens Per Second: 23.622047244094485
+Response Token Count: 14

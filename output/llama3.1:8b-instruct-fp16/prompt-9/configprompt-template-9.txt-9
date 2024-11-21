@@ -1,0 +1,10 @@
+(declare
+  (?g - goal
+    (= (and
+        (at robo coffee_table_6273f0df-8757-4b02-aee5-2178e7756601)
+        (clear robo coffee_table_6273f0df-8757-4b02-aee5-2178e7756601)
+      )
+     ?g) )
+Time to first token: 2.8208
+Tokens Per Second: 36.56943839791032
+Response Token Count: 83

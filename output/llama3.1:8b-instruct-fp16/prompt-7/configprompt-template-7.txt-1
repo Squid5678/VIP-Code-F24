@@ -1,0 +1,27 @@
+(open
+ (and 
+  (at ?robo ?loc)  
+  (clear ?loc)   
+  (at ?kitchen_counter microwave_08828cc2-254e-4563-96a8-1016d2a5e2b5)
+  (clear microwave_08828cc2-254e-4563-96a8-1016d2a5e2b5)  
+  (at ?kitchen_counter pan_55651478-669f-4f25-a842-3877ba0299ad)
+  (clear pan_55651478-669f-4f25-a842-3877ba0299ad)  
+  (at ?sink knife_a6885423-a760-4001-9574-4f99e203f4a4)
+  (clear sink_f0b1e0a6-32e3-4802-bc8d-03a833343c34)
+  (at ?shelf bottle_d9830df4-07d6-43bb-8435-a0d41516dc00)
+  (clear shelf_c6886a28-96c5-4e72-a770-d6a5f67e83b7)  
+  (at ?sink towel_roll_c67711b9-ef21-4e58-8c07-79d5b29ccedf)
+  (clear sink_f0b1e0a6-32e3-4802-bc8d-03a833343c34)  
+  (at ?shelf fork_6558841e-a635-456f-ba97-6bb4d7876e5c)
+  (clear shelf_c6886a28-96c5-4e72-a770-d6a5f67e83b7)  
+  (on tv_stand_c6743533-ebac-44b6-bd31-289e0bd083bc action_figure_1ad24752-16cf-4f72-a387-336ed428db58)
+  (clear tv_stand_c6743533-ebac-44b6-bd31-289e0bd083bc)  
+  (on tv_stand_c6743533-ebac-44b6-bd31-289e0bd083bc knife_b37decbc-2c9e-457a-af9f-f087f8bb3a0f)
+  (clear tv_stand_c6743533-ebac-44b6-bd31-289e0bd083bc)  
+  (on tv_stand_c6743533-ebac-44b6-bd31-289e0bd083bc towel_roll_c67711b9-ef21-4e58-8c07-79d5b29ccedf)
+  (clear tv_stand_c6743533-ebac-44b6-bd31-289e0bd083bc)  
+ ) 
+ )
+Time to first token: 17.3085
+Tokens Per Second: 37.75832291108332
+Response Token Count: 633

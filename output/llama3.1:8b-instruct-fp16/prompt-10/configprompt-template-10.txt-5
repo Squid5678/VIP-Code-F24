@@ -1,0 +1,38 @@
+(declare
+  (?robo - robot)
+  (?coffee_machine - coffee-machine)
+  (?microwave - microwave)
+  (?toaster - toaster)
+  (?oven - oven)
+  (?pantry - pantry)
+  (?fridge - fridge)
+  (?dishwasher - dishwasher)
+  (?sink - sink)
+  (?stove - stove)
+  (?receptacle - receptacle)
+  (?trash_receptacle - trash-receptacle)
+  (?counter_top_1 - counter-top)
+  (?counter_top_2 - counter-top)
+  (?shelf_1 - shelf)
+  (?shelf_2 - shelf)
+  (?sink_1 - sink)
+  (?sink_2 - sink)
+)
+
+(:goal (and
+  (at ?robo counter_top_2)
+  (at ?coffee_machine pantry)
+  (at ?microwave shelf_2)
+  (at ?toaster shelf_1)
+  (at ?oven stove)
+  (at ?pantry pantry)
+  (at ?fridge pantry)
+  (at ?dishwasher sink_1)
+  (at ?sink_2 counter_top_2)
+  (at ?stove stove)
+  (at ?receptacle pantry)
+  (at ?trash_receptacle pantry)
+))
+Time to first token: 7.5464
+Tokens Per Second: 37.59612645969809
+Response Token Count: 263

@@ -1,0 +1,18 @@
+(declare
+  (?object - object)
+  (?loc - location)
+)
+
+(:goal
+  (and
+    (at ?object kitchen_sink)
+    (at ?object shelf)
+    (at ?object tv_stand)
+    (at ?object counter_top)
+    (at ?object cooktop)
+    (at ?object sink)
+  )
+)
+Time to first token: 2.5581
+Tokens Per Second: 36.507153428712385
+Response Token Count: 72

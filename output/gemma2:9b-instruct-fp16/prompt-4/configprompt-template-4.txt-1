@@ -1,0 +1,6 @@
+(goal (and 
+  (at robot table_fcd776f8-0526-4521-9a47-b651781cf22a)
+  ))
+Time to first token: 2.6901
+Tokens Per Second: 25.90147282884713
+Response Token Count: 33

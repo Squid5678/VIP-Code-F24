@@ -1,0 +1,18 @@
+(define (goal)
+
+  (and 
+   (= (robotic-arm-pos-x) 0.5)
+   (= (robotic-arm-pos-y) -1.0)
+   (= (gripper-clamp-state) open)
+   (= (end-effector-object-id) cup)
+   (= (robotic-arm-joint-angles 'arm-base-link-angle) (/ pi 2))
+   (= (robotic-arm-joint-angles 'upper-arm-link-angle) 0.0)
+   (= (robotic-arm-joint-angles 'forearm-link-angle) -1.57)
+   (= (robotic-arm-joint-angles 'wrist-swivel-angle) 0.0)
+   (= (robotic-arm-joint-angles 'wrist-flip-angle) (/ pi 2))
+   (= (robotic-arm-joint-angles 'wrist-rotate-angle) -1.57))
+
+)
+Time to first token: 5.5667
+Tokens Per Second: 37.47026169706582
+Response Token Count: 188

@@ -1,0 +1,18 @@
+(and (not (at kitchen_counter bottle_ba87abbf-89e1-443e-9033-bfd99e938842))
+(at shelf_c6886a28-96c5-4e72-a770-d6a5f67e83b7 bottle_d9830df4-07d6-43bb-8435-a0d41516dc00)
+(at shelf_c6886a28-96c5-4e72-a770-d6a5f67e83b7 fork_6558841e-a635-456f-ba97-6bb4d7876e5c)
+(at shelf_c6886a28-96c5-4e72-a770-d6a5f67e83b7 knife_1b2ab872-b5a1-49ba-8d53-426d7cb734f2)
+(at shelf_c6886a28-96c5-4e72-a770-d6a5f67e83b7 pencil_55baeffe-259b-4535-8f34-ce6a920aafbe)
+(at counter_top_a7c48973-8ffa-4519-979a-b36a2831e9c1 microwave_08828cc2-254e-4563-96a8-1016d2a5e2b5)
+(at counter_top_a7c48973-8ffa-4519-979a-b36a2831e9c1 microwave_04103ebe-81b9-46da-86fd-b623101b12eb)
+(at cooktop_c89b51d8-3ef6-4f52-a0ba-7741286d75cd pan_55651478-669f-4f25-a842-3877ba0299ad)
+(at sink_f0b1e0a6-32e3-4802-bc8d-03a833343c34 knife_a6885423-a760-4001-9574-4f99e203f4a4)
+(at sink_f0b1e0a6-32e3-4802-bc8d-03a833343c34 bottle_d9830df4-07d6-43bb-8435-a0d41516dc00)
+(at table_b5f41e62-9153-47d1-a80c-299b4e834791 fork_6558841e-a635-456f-ba97-6bb4d7876e5c)
+(at table_b5f41e62-9153-47d1-a80c-299b4e834791 knife_1b2ab872-b5a1-49ba-8d53-426d7cb734f2)
+(at table_b5f41e62-9153-47d1-a80c-299b4e834791 pencil_55baeffe-259b-4535-8f34-ce6a920aafbe)
+(at table_b5f41e62-9153-47d1-a80c-299b4e834791 bottle_ba87abbf-89e1-443e-9033-bfd99e938842))
+
+Time to first token: 39.2828
+Tokens Per Second: 26.95697252462416
+Response Token Count: 693

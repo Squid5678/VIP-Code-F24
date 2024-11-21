@@ -1,0 +1,19 @@
+(declare
+  (?robo - robot)
+  (?table1 - table-at ?x1 ?y1 ?z1)
+  (?garbage_can1 - garbage-can-at ?x2 ?y2 ?z2)
+  (?sink1 - sink-at ?x3 ?y3 ?z3)
+  (?kitchen_counter1 - kitchen-counter-at ?x4 ?y4 ?z4)
+)
+
+(:goal (robo-at-table ?robo ?table1)
+       and
+       at-table-?garbage_can1 ?fork_f41aedfc-8e61-4e00-81c6-3134fa667a64
+       and
+       at-sink-?sink1 ?ladle_9c4e36e1-c8bb-4b88-a6f5-f42fcb480fb4
+       and
+       on-kitchen-counter-?kitchen_counter1 ?salt_shaker_487986ea-9779-4d98-9c44-eca31d030dd7
+)
+Time to first token: 6.5541
+Tokens Per Second: 36.76592912992846
+Response Token Count: 220

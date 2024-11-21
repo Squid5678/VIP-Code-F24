@@ -1,0 +1,18 @@
+(?goal
+  (and
+    (?object 
+      ?category 
+      (in-table table_3e269624-7055-4d4a-a3ba-979ae855d94d))
+    (?object 
+      ?category 
+      (in-table table_3e269624-7055-4d4a-a3ba-979ae855d94d))
+    (?object 
+      ?category 
+      (in-sink sink_c82c6197-e65e-4002-b3b6-26666d72c7cf))
+    (?object 
+      ?category 
+      (in-counter counter_1)))
+)
+Time to first token: 4.3204
+Tokens Per Second: 36.43617021276596
+Response Token Count: 136

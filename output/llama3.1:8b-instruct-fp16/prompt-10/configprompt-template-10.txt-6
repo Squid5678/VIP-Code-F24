@@ -1,0 +1,82 @@
+(declare (types 
+  furniture - object 
+  pan - object 
+  knife - object 
+  towel-roll - object 
+  fork - object 
+  pencil - object 
+  bottle - object 
+  cup - object 
+  microwave - object 
+  tv-stand - object 
+  sink - location 
+  shelf - location 
+  counter-top - location 
+  cooktop - location 
+  robo - robot 
+))
+
+(declare (predicates
+  clear ?furniture & :type furniture)
+  (predicates 
+    at ?robo & :type robo & :types object)
+  (predicates 
+    on-table ?obj & :types object)
+  (predicates 
+    not-on-table ?obj & :types object)
+  (predicates 
+    in-sink ?obj & :types object)
+  (predicates 
+    clear ?sink & :type sink)
+)
+
+(declare (objects
+  robo - robo 
+))
+
+(objective 
+(and 
+(forall (i - i) 
+(forall (?furniture-0 - furniture)
+  (and 
+   (= ?furniture-0 (if 
+      (exists (?furniture-1 - furniture)
+       (= ?furniture-1 ?furniture-0))
+     ?furniture-1
+     robo)) 
+    (forall (j - i) 
+     (=>
+      (and 
+       (< j i) 
+       (= ?furniture-2 (if 
+          (exists (?furniture-3 - furniture)
+           (= ?furniture-3 ?furniture-2))
+        ?furniture-3
+        robo)) 
+       (> (+ i (- j 1)) 0)))))))
+(and 
+(forall (i - i) 
+(forall (?sink-0 - sink)
+  (and 
+   (= ?sink-0 (if 
+      (exists (?sink-1 - sink)
+       (= ?sink-1 ?sink-0))
+     ?sink-1
+     robo)) 
+    (forall (j - i) 
+     (=>
+      (and 
+       (< j i) 
+       (= ?sink-2 (if 
+          (exists (?sink-3 - sink)
+           (= ?sink-3 ?sink-2))
+        ?sink-3
+        robo)) 
+       (> (+ i (- j 1)) 0)))))))
+(forall (?furniture-4 - furniture) 
+(not clear ?furniture-4))
+(forall (?sink-4 - sink) 
+(not clear ?sink-4)))
+Time to first token: 14.474
+Tokens Per Second: 37.92658445655291
+Response Token Count: 528

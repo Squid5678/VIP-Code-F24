@@ -1,0 +1,19 @@
+(declare
+  (?table - table)
+  (?object - object)
+)
+
+(:goal
+  (forall (?table ?object)
+    (=>
+      (and (at ?object ?table) (dirty ?object))
+      (or
+        (at robot ?table)
+        (clear ?object)
+      )
+    )
+  )
+)
+Time to first token: 2.5159
+Tokens Per Second: 35.51496702181634
+Response Token Count: 69

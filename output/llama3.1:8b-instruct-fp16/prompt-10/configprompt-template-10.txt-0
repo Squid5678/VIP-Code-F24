@@ -1,0 +1,61 @@
+(declare
+  (?p - parameter)
+
+  (define (problem kitchen_problem)
+    (:domain kitchen_domain)
+    (:objects 
+      table1 - cabinet
+      table2 - cabinet
+      shelf1 - cabinet
+      counter_top_1 - surface
+      counter_top_2 - surface
+      cooktop - appliance
+      microwave_1 - appliance
+      sink - fixture
+      tv_stand - furniture
+      stool - furniture
+      towel_roll_1 - item
+      towel_roll_2 - item
+      pan - item
+      knife_1 - item
+      knife_2 - item
+      fork - item
+      spoon - item
+      cup - item
+      bottle_1 - item
+      bottle_2 - item
+      apple - food
+      banana - food
+      broom - cleaning_tool
+      mop - cleaning_tool
+      dustpan - cleaning_tool
+      vacuum - cleaning_tool
+    )
+    (:init 
+      (in table1 cup)
+      (in table1 knife_1)
+      (in table2 pan)
+      (in shelf1 towel_roll_1)
+      (on stool tv_stand)
+      (in sink knife_2)
+      (in counter_top_1 bottle_1)
+      (on cooktop microwave_1)
+      (on counter_top_2 pan)
+    )
+    (:goal
+      (and 
+        (not (in table1 cup))
+        (in shelf1 towel_roll_2)
+        (on stool tv_stand)
+        (in sink knife_2)
+        (in counter_top_1 bottle_2)
+        (on cooktop microwave_1)
+        (on counter_top_2 pan)
+      )
+    )
+  )
+
+)
+Time to first token: 9.878
+Tokens Per Second: 37.90149892933619
+Response Token Count: 353

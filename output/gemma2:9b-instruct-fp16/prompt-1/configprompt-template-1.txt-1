@@ -1,0 +1,17 @@
+(and 
+  (closed (object coffee_mug)) 
+  (closed (object table))
+  (closed (object chair))
+  (closed (object stove))
+  (closed (object oven))
+  (closed (object refrigerator))
+  (closed (object dishwasher))
+  (closed (object microwave))
+  (closed (object trash_can))
+  (closed (object sink))
+  (closed (object countertop))
+  (closed (object door)) 
+)
+Time to first token: 4.7966
+Tokens Per Second: 26.522593320235757
+Response Token Count: 93

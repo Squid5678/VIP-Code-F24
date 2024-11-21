@@ -1,0 +1,15 @@
+(and (at robot table)
+	(at apple kitchen_counter)
+	(at knife garbage_can)
+	(at spray_bottle garbage_can)
+	(at box_of_tissues garbage_can)
+	(at bottle garbage_can)
+	(at watch garbage_can)
+	(holding robot pencil)
+	(on counter_top pencil)
+	(closed garbage_can)
+	(closed coffee_table)
+	(free robo) )
+Time to first token: 4.7884
+Tokens Per Second: 26.61409561360276
+Response Token Count: 78

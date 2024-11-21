@@ -1,0 +1,104 @@
+(declare
+  (?robo - robot)
+)
+
+(define (domain kitchen-domain)
+  (:requirements :strips)
+  (:types 
+    table object knife fork spoon cup plate bowl action_figure tv_stand tv stand sink shelf counter_top cooktop pan microwave towel roll bottle 
+  )
+  (:predicates 
+    (at ?x - object ?y - location) 
+    (on-table ?o - object ?t - table)
+    (on-shelf ?o - object ?s - shelf)
+    (in-sink ?o - object ?sn - sink)
+    (in-counter-top ?o - object ?ct - counter_top)
+    (in-cooktop ?o - object ?co - cooktop)
+    (holds ?r - robot ?o - object) 
+  )
+  (:action move-object 
+    :parameters (?x - object ?y - location ?z - object)
+    :preconditions (and
+      (at ?x ?y)
+      (not (on-table ?x))
+      (not (on-shelf ?x))
+      (not (in-sink ?x))
+      (not (in-counter-top ?x))
+      (not (in-cooktop ?x))
+    )
+    :effects (and
+      (at ?x ?z)
+      (not (at ?x ?y))
+    )
+  )
+  (:action pick-up 
+    :parameters (?r - robot ?o - object)
+    :preconditions (and
+      (at ?r table-1)
+      (on-table ?o table-1)
+    )
+    :effects (and
+      (holds ?r ?o)
+      (not (on-table ?o table-1))
+    )
+  )
+  (:action put-down 
+    :parameters (?r - robot ?o - object)
+    :preconditions (at ?r ?t)
+    :effects (and
+      (not (holds ?r ?o))
+      (or
+        (= ?t table-1)
+        (on-table ?o table-1)
+      )
+    )
+  )
+)
+
+(define (problem kitchen-problem)
+  (:domain kitchen-domain)
+  (:objects 
+    robo - robot
+    table-1 - table
+    shelf-1 - shelf
+    sink-1 - sink
+    counter-top-1 - counter_top
+    cooktop-1 - cooktop
+    knife1 - knife
+    fork1 - fork
+    spoon1 - spoon
+    cup1 - cup
+    plate1 - plate
+    bowl1 - bowl
+    action_figure1 - action_figure
+    tv_stand1 - tv_stand
+    tv1 - tv
+    stand1 - stand
+    bottle1 - bottle
+    pan1 - pan
+    microwave1 - microwave
+    towel_roll1 - towel roll
+  )
+  (:init 
+    (at robo kitchen)
+    (on-table cup1 table-1)
+    (on-shelf fork1 shelf-1)
+    (in-sink knife1 sink-1)
+    (in-counter-top spoon1 counter-top-1)
+    (in-cooktop pan1 cooktop-1)
+    (holds robo action_figure1)
+  )
+  (:goal 
+    (and
+      (at cup1 table-2)
+      (at fork1 shelf-2)
+      (at knife1 sink-2)
+      (at spoon1 counter-top-2)
+      (at pan1 cooktop-2)
+      (at action_figure1 tv_stand-2)
+    )
+  )
+)
+Time to first token: 19.8219
+Tokens Per Second: 38.031088082901555
+Response Token Count: 733

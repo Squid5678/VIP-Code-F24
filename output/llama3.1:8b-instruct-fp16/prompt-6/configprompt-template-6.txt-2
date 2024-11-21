@@ -1,0 +1,12 @@
+(declare
+ ?goal
+ :AND
+ (not (on microwave_a7fa235d-14c9-43df-8a7b-25eb4a567812 shelf_9e2f352b-e92b-4cef-859b-90ca5a952283))
+ (not (on pan_880affa2-84c7-4cfd-9cf5-8d12ae616235 shelf_9e2f352b-e92b-4cef-859b-90ca5a952283))
+ (not (on towel_roll_d4d7b8a3-1cdb-45ed-8290-f1c3ef6c96bc shelf_9e2f352b-e92b-4cef-859b-90ca5a952283))
+ (not (on bottle_a2f94b4b-b175-4529-a593-4a83e6916fcb shelf_9e2f352b-e92b-4cef-859b-90ca5a952283))
+ (not (on fork_d17c1066-3fc4-42dc-a7fd-20683b74b2c1 shelf_9e2f352b-e92b-4cef-859b-90ca5a952283))
+)
+Time to first token: 8.0318
+Tokens Per Second: 37.68308921438083
+Response Token Count: 282

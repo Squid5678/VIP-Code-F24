@@ -1,0 +1,30 @@
+(open ?obj 
+   (at ?obj coffee_table_6273f0df-8757-4b02-aee5-2178e7756601)
+   (not (on ?obj ?other)))
+(open ?obj 
+   (at ?obj shelf_1dee60b5-7ce1-4e31-b559-0cb432bc0f44)
+   (not (on ?obj ?other)))
+(open ?obj 
+   (at ?obj sink_e28fd521-7d8b-4d5b-a903-74e87b3d55a6)
+   (not (on ?obj ?other)))
+(open ?obj 
+   (at ?obj counter_top_32af91c8-1827-413c-84a3-45259a841d3f)
+   (not (on ?obj ?other)))
+(open ?obj 
+   (at ?obj tv_stand_ddcd3678-7c40-4b1f-a67c-5f7d9e1a84d4)
+   (not (on ?obj ?other)))
+(open ?obj 
+   (at ?obj table_d3ae9726-4a0d-4b4a-963a-30bd80087d47)
+   (not (on ?obj ?other)))
+(open ?obj 
+   (at ?obj cooktop_ed54fea4-caa6-4132-bd07-ad866f00e9c0)
+   (not (on ?obj ?other)))
+(open ?obj 
+   (at ?obj counter_top_2b046b0a-d7ad-4c3d-b85d-6242be930982)
+   (not (on ?obj ?other)))
+(open ?obj 
+   (at ?obj sink_3efcac75-aea3-4d71-838b-bf0e185ed70a)
+   (not (on ?obj ?other)))
+Time to first token: 11.4253
+Tokens Per Second: 37.87948271118041
+Response Token Count: 412

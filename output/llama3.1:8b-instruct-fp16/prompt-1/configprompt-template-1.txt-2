@@ -1,0 +1,19 @@
+(in-order 
+  (free robo)
+  (in kitchen
+   (near pot_61aa3960-99b8-4411-8a7c-105521aeac68 cooktop_1a6e4db6-3459-4d36-a622-7ca95b438937)
+   (near action_figure_2afd2972-9e99-4eac-9c18-0528f4751d57 cooktop_1a6e4db6-3459-4d36-a622-7ca95b438937)
+   (near ladle_499feac5-430e-441d-8768-29c3febdad0e counter_top_597a6313-d0f2-4f34-92b1-841ef67f9953)
+   (near jar_ca848b59-d7d0-45e7-9d5f-5cb42ee18c17 top_cabinet_9522ae1f-a3d8-4205-b1a7-a5130f4ddc88)
+   (near smartphone_021a5dd6-12cc-46cb-ada5-a29d38da9410 counter_top_597a6313-d0f2-4f34-92b1-841ef67f9953)
+   (near laptop_ef7b0082-5709-4131-bafa-8ea2a011a127 counter_top_597a6313-d0f2-4f34-92b1-841ef67f9953)
+   (near laptop_62835ec0-119a-4523-a03d-224033131c49 counter_top_597a6313-d0f2-4f34-92b1-841ef67f9953)
+   (near bottle_d14b74ac-ba9f-4ce9-9fb3-f7de14b30d04 counter_top_597a6313-d0f2-4f34-92b1-841ef67f9953)
+   (near knife_b0995f6e-5d43-400f-a548-50764f45783d counter_top_8e73ecf0-d018-4850-90b6-2aad732f7249)
+   (near knife_b58199e2-5e6d-4a54-b130-442df0b2079f counter_top_8e73ecf0-d018-4850-90b6-2aad732f7249)
+   (near desk_lamp_e2e19f7f-f38f-48b0-9d1b-e1f9cbf9d905 table_ff94dcb7-e210-4168-b0d9-7307c5768a2c)
+   (near butter_knife_c8aec558-d533-45ca-9fda-0f0c94ae5ba9 counter_top_e3f19c73-a002-48ea-99e1-3ce2e432c634)))
+)
+Time to first token: 18.6193
+Tokens Per Second: 37.23580834347682
+Response Token Count: 672

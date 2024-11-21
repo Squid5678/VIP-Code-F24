@@ -1,0 +1,5 @@
+(and (at robot coffee_table)
+   (holding robot bottle_d14b74ac_ba9f_4ce9_9fb3_f7de14b30d04))
+Time to first token: 2.6469
+Tokens Per Second: 25.54744525547445
+Response Token Count: 38

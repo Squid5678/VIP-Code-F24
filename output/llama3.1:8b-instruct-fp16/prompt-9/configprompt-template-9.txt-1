@@ -1,0 +1,16 @@
+(declare
+  (?g - goal
+    :parameters ()
+    :conditions (and
+      (= 0 ?x) 
+      (on-table robo coffee_table_6273f0df-8757-4b02-aee5-2178e7756601)
+      (clear coffee_table_6273f0df-8757-4b02-aee5-2178e7756601)
+      (on-table bottle_9e312c9f-cb2a-438a-93dd-3f326c22a2dc coffee_table_6273f0df-8757-4b02-aee5-2178e7756601)
+      (clear microwave_31dd697c-b245-460d-aac1-d1f618036443)
+      (on-table pan_dfc4a8be-8708-47ce-b70c-ef51f763697c cooktop_ed54fea4-caa6-4132-bd07-ad866f00e9c0)
+      (clear pan_dfc4a8be-8708-47ce-b70c-ef51f763697c)
+    )
+  )
+Time to first token: 7.2008
+Tokens Per Second: 37.69069697876159
+Response Token Count: 251

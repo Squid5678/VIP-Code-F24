@@ -1,0 +1,39 @@
+(findall 
+ ?x 
+ (and
+  (= (action-name ?x) close)
+  (or
+   (= (object-type ?x) ?object-type1)
+   (= (object-type ?x) ?object-type2)))
+ 
+ (close sink_d0966d61-8033-42de-83d0-294a99eedb75)
+ (close shelf_9e2f352b-e92b-4cef-859b-90ca5a952283)
+ (close counter_top_b74199e8-f0e9-4b17-bdbc-0fa3614f035b)
+ (close cooktop_929c2965-750f-4283-8296-110c252546d9)
+ (close tv_stand_718236d9-7c66-4514-89a7-ea08d12c65f9)
+ (close table_b637666e-7e8a-4edc-ac80-c7606584b290)
+ (close shelf_9e2f352b-e92b-4cef-859b-90ca5a952283)
+ (close sink_d0966d61-8033-42de-83d0-294a99eedb75)
+ (close counter_top_b74199e8-f0e9-4b17-bdbc-0fa3614f035b)
+ (close shelf_9e2f352b-e92b-4cef-859b-90ca5a952283)
+ (close shelf_9e2f352b-e92b-4cef-859b-90ca5a952283)
+ (close counter_top_b74199e8-f0e9-4b17-bdbc-0fa3614f035b)
+ (close cooktop_929c2965-750f-4283-8296-110c252546d9)
+ (close sink_d0966d61-8033-42de-83d0-294a99eedb75)
+
+)
+(findall 
+ ?x 
+ (and
+  (= (action-name ?x) open)
+  (or
+   (= (object-type ?x) ?object-type1)
+   (= (object-type ?x) ?object-type2)))
+
+ 
+ (open robo)
+
+)
+Time to first token: 13.318
+Tokens Per Second: 37.89950769711651
+Response Token Count: 484

@@ -1,0 +1,15 @@
+(and 
+(closed counter_top_b833e2a8-d04c-469a-bf18-2f53e7b7f08f)
+(closed counter_top_27528a15-b05c-46b1-971d-64144a5591dd)
+(closed counter_top_da96b13e-7869-4d40-8a57-2c59f81448ea)
+(closed sink_c82c6197-e65e-4002-b3b6-26666d72c7cf)
+(closed side_table_c03a1612-57f8-479a-851b-e5b1e000d08e)
+(closed table_a07ce78b-149b-4371-a1d1-c5b0f90e6299)
+(closed side_table_ebca827a-4333-41be-9b4b-306f63c67a0e)
+(closed kitchen_cabinet_16a5d4f7-d993-465b-a0ff-0e3c8d993203)
+(closed kitchen_cabinet_d6e7f9a4-b923-418b-a9e3-e1134360361f)
+(free robo)
+)
+Time to first token: 15.4191
+Tokens Per Second: 26.736512687937953
+Response Token Count: 269

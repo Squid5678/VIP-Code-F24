@@ -1,0 +1,7 @@
+(and (at robot kitchen_counter) 
+(holding robot pencil_7a2ba6cf-5419-4c41-a89e-afbeea07fd60)
+(free garbage_can_b9bd798a-59f1-4751-bf94-1e1dec6eb00f) 
+(holding robot watch_207106d5-67e0-4d41-bb3c-ab32a5facb0f))
+Time to first token: 5.4437
+Tokens Per Second: 26.849894291754755
+Response Token Count: 97

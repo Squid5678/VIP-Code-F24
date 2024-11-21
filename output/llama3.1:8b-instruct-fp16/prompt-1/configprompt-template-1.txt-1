@@ -1,0 +1,16 @@
+(define (goal)
+  (= (hold 'robo) (holds 'robo))
+  (= (location 'laptop) location-1)
+  (= (location 'milk) top-cabinet-1)
+  (= (location 'jar) top-cabinet-1)
+  (= (location 'smartphone) counter-top-1)
+  (= (location 'ladle) counter-top-1)
+  (= (location 'bottle) counter-top-1)
+  (= (location 'knife) table-1)
+  (= (location 'pot) cooktop-1)
+  (= (location 'action-figure) cooktop-1)
+  (= (location 'butter-knife) counter-top-2)
+)
+Time to first token: 4.6116
+Tokens Per Second: 36.8369351669941
+Response Token Count: 149

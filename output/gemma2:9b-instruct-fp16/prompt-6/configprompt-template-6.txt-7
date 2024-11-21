@@ -1,0 +1,9 @@
+(and 
+(at counter_top_b74199e8-f0e9-4b17-bdbc-0fa3614f035b microwave_72152dd1-e5d7-46b9-9068-6ce066384f16)
+(at cooktop_929c2965-750f-4283-8296-110c252546d9 pan_880affa2-84c7-4cfd-9cf5-8d12ae616235)
+(at sink_d47d5031-e6ff-48c2-889e-2f112015b2fa knife_8257ee02-559c-45f9-9247-1d5a813850f0)
+(at counter_top_7c2bbaff-2ba8-4f1f-b239-7d82f9c14ce3 bottle_d952ef00-dc05-41bc-bde6-48e442b78de9)
+)
+Time to first token: 12.0852
+Tokens Per Second: 26.89873417721519
+Response Token Count: 208

@@ -1,0 +1,8 @@
+(and (goal (at robot table))
+  (at counter_top_counter towel_roll_5ca7193d) ) 
+
+
+
+Time to first token: 2.0609
+Tokens Per Second: 25.37313432835821
+Response Token Count: 25

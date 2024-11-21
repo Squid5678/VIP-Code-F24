@@ -1,0 +1,24 @@
+(goal 
+  (and 
+    (at robot kitchen)
+    (holding-robot nothing)
+    (on table counter_top_27528a15-b05c-46b1-971d-64144a5591dd towel_roll_5ca7193d-cb6a-410f-9ea7-649f21a415ba)
+    (on table counter_top_27528a15-b05c-46b1-971d-64144a5591dd fork_f41aedfc-8e61-4e00-81c6-3134fa667a64)
+    (on table counter_top_27528a15-b05c-46b1-971d-64144a5591dd tomato_19f1bf21-cfa3-4b32-9d35-4747134cf151)
+    (on table counter_top_27528a15-b05c-46b1-971d-64144a5591dd grapes_8b8b5f81-f51d-47b4-84ab-49af8181f649)
+    (on table counter_top_27528a15-b05c-46b1-971d-64144a5591dd spoon_45bd0ad9-afcb-476e-85b0-b2b6d80f65a5)
+    (on table counter_top_27528a15-b05c-46b1-971d-64144a5591dd cup_2568fff3-a419-42f2-936b-96e7025ff01f)
+    (on table counter_top_27528a15-b05c-46b1-971d-64144a5591dd salt_shaker_487986ea-9779-4d98-9c44-eca31d030dd7)
+    (on table counter_top_27528a15-b05c-46b1-971d-64144a5591dd knife_37e51e71-cdbd-49c5-a574-3f9a0c38be5b)
+    (on table counter_top_27528a15-b05c-46b1-971d-64144a5591dd desk_lamp_32400913-c94a-490e-9082-015a6fe8a404)
+    (on table counter_top_27528a15-b05c-46b1-971d-64144a5591dd soda_41ed6081-ed24-485c-acfb-7e651d0499c2)
+    (on table counter_top_27528a15-b05c-46b1-971d-64144a5591dd spray_bottle_d20937a9-0b0f-45c2-8c7e-fa791230160b)
+    (on table counter_top_27528a15-b05c-46b1-971d-64144a5591dd cup_99edc9e4-5666-4fbb-8ad6-39663e42c3ef)
+    (on table counter_top_27528a15-b05c-46b1-971d-64144a5591dd ladle_1234567890abcdef)
+    (on table counter_top_27528a15-b05c-46b1-971d-64144a5591dd knife_9876543210fedcba)
+    (at robot kitchen)
+  )
+)
+Time to first token: 42.3641
+Tokens Per Second: 26.871262877314315
+Response Token Count: 753

@@ -1,0 +1,9 @@
+(goal (and 
+  (holding ?robo knife_1ed00fe1-20a9-47db-8b8b-e768da9073a9)
+))
+
+
+
+Time to first token: 2.7118
+Tokens Per Second: 26.028110359187924
+Response Token Count: 38

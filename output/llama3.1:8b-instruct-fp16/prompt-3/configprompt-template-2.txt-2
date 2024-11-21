@@ -1,0 +1,9 @@
+(free robo)
+
+Goal:
+(and
+  (at robo table_3e269624-7055-4d4a-a3ba-979ae855d94d)
+)
+Time to first token: 1.7289
+Tokens Per Second: 34.48275862068966
+Response Token Count: 40

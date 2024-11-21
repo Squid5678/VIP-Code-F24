@@ -1,0 +1,10 @@
+(?goal 
+  (and
+    (at ?sink_c82c6197-e65e ladle_9c4e36e1-c8bb-4b88-a6f5-f42fcb480fb4)
+    (at ?sink_c82c6197-e65e cup_99edc9e4-5666-4fbb-8ad6-39663e42c3ef)
+    (at ?counter_top_27528a15-b05c-46b1-971d-64144a5591dd towel_roll_5ca7193d-cb6a-410f-9ea7-649f21a415ba)
+  )
+)
+Time to first token: 4.6556
+Tokens Per Second: 36.460865337870686
+Response Token Count: 148

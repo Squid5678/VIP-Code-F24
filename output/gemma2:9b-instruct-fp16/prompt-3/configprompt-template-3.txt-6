@@ -1,0 +1,9 @@
+(and 
+(at robot (location garbage_can_b9bd798a-59f1-4751-bf94-1e1dec6eb00f)) 
+) 
+
+
+
+Time to first token: 2.6787
+Tokens Per Second: 25.954198473282442
+Response Token Count: 36

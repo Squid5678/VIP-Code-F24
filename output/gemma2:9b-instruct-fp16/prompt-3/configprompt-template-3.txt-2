@@ -1,0 +1,11 @@
+(and 
+  (on sofa_1 teddy_bear_1bf2b234)
+  (on sofa_1 house_plant_d979421d)
+  (on sofa_1 apple_79e53b07)
+  (on sofa_1 desk_lamp_63e3e0b0)
+  (on coffee_table_107c28dd bottle_e6199818)
+  (holding robo pencil_7a2ba6cf)
+)
+Time to first token: 5.3355
+Tokens Per Second: 26.61185633924708
+Response Token Count: 96

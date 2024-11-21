@@ -8,13 +8,14 @@ api:
 
 # Model
 model:
-  name: "llama3.1"
+  name: "gemma2:9b-instruct-fp16"
   parameters:
     stream: false
 
 # Prompt
 test:
-  prompt_file: "prompts/prompt05.txt"
+  prompt_file: "config/prompt-template-7.txt"
+  num_trials: 10
 
 # Performance
 metrics:

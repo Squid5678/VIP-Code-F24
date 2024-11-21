@@ -1,0 +1,14 @@
+(declare (sort state <))
+(define (goal-state ?state)
+  (and
+   (= (count-in ?state 'robo) 1)
+   (forall (?x)
+          (implies
+           (< ?x 5)
+           (and
+            (not (on-table ?x))
+            (not (on-counter ?x)))))))
+(= (goal-state init))
+Time to first token: 2.7777
+Tokens Per Second: 35.842293906810035
+Response Token Count: 80

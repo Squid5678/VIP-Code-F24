@@ -1,0 +1,112 @@
+(declare
+  (types 
+    kitchen-device - object
+    utensil - object
+    food - object
+    dish-item - object
+  )
+  (predicates 
+    (empty ?x)
+    (on-table ?x)
+    (on-shelf ?x)
+    (in-sink ?x)
+    (free-robo) ; added to the list of predicates
+    (is-kitchen-device ?x kitchen-device)
+    (is-utensil ?x utensil)
+  )
+  (objects 
+    robo - robot
+    table1 - kitchen-table
+    shelf1 - shelf
+    sink1 - sink
+    microwave1 - kitchen-device
+    pan1 - kitchen-device
+    knife1 - utensil
+    towel-roll1 - dish-item
+    fork1 - utensil
+    bottle1 - food
+  )
+)
+
+(define (domain cooking)
+  (:requirements :strips :typing)
+  (:types
+    kitchen-table object shelf sink counter-top
+    robot 
+    kitchen-device - object
+    utensil - object
+    food - object
+    dish-item - object
+  )
+
+  (:predicates 
+    (empty ?x) 
+    (on-table ?x) 
+    (on-shelf ?x)
+    (in-sink ?x)
+    (free-robo)
+    (is-kitchen-device ?x kitchen-device)
+    (is-utensil ?x utensil)
+  )
+
+  (:action pick-up
+      :parameters (?x - object)
+      :preconditions (and 
+                      (not (empty ?x))
+                      (or (on-table ?x) (on-shelf ?x) (in-sink ?x)))
+      :effects (and 
+                (free-robo)
+                (not (on-table ?x)) 
+                (not (on-shelf ?x))
+                (not (in-sink ?x))))
+
+  (:action put-down
+      :parameters (?x - object)
+      :preconditions (and 
+                      (not (empty ?x))
+                      (free-robo))
+      :effects (and 
+                (or (empty ?x) (on-table ?x)) 
+                (or (empty ?x) (on-shelf ?x)) 
+                (or (empty ?x) (in-sink ?x))))
+
+  (:action start-cooking
+    :parameters ()
+    :preconditions (free-robo)
+    :effects (and 
+              ; Add the goal here
+      ))
+
+)
+
+(define (problem cooking-problem)
+  (:domain cooking)
+  
+  (:objects 
+    robo - robot
+    table1 - kitchen-table
+    shelf1 - shelf
+    sink1 - sink
+    microwave1 - kitchen-device
+    pan1 - kitchen-device
+    knife1 - utensil
+    towel-roll1 - dish-item
+    fork1 - utensil
+    bottle1 - food
+  )
+
+  (:init 
+    (and 
+      ; Add the initial state here
+      )
+  )
+
+  (:goal 
+    (and 
+      ; Add the goal here
+    ))
+
+)
+Time to first token: 17.4582
+Tokens Per Second: 37.97318844859151
+Response Token Count: 642

@@ -1,0 +1,9 @@
+(:goal
+  (and 
+    (= (location 'robo) table_3e269624-7055-4d4a-a3ba-979ae855d94d)
+    (= (holding 'robo) spoon_45bd0ad9-afcb-476e-85b0-b2b6d80f65a5)
+  )
+)
+Time to first token: 2.7802
+Tokens Per Second: 35.77817531305903
+Response Token Count: 79

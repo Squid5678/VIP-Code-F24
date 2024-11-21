@@ -1,0 +1,11 @@
+(goal (and 
+  (at robot table_df53c043-ca24-45b2-9ca4-c830b8c23d04)
+  (holding robot cup_123c0472-7cd1-4212-b4f4-4e9c725b70c7)
+  (at robot table_df53c043-ca24-45b2-9ca4-c830b8c23d04)
+  (holding robot grapes_1cc5aa79-bb13-47bb-9198-1c2031e5ac2c)
+  (at robot table_df53c043-ca24-45b2-9ca4-c830b8c23d04)
+  (holding robot spray_bottle_013a2624-004e-4779-ae25-4b986b1425d9)
+))
+Time to first token: 10.3496
+Tokens Per Second: 26.76626206037971
+Response Token Count: 183

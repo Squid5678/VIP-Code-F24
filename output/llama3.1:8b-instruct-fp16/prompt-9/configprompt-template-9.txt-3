@@ -1,0 +1,15 @@
+(declare (sort objects))
+(:goal
+  (and
+    (closed coffee_table_6273f0df-8757-4b02-aee5-2178e7756601)
+    (closed sink_e28fd521-7d8b-4d5b-a903-74e87b3d55a6)
+    (open counter_top_32af91c8-1827-413c-84a3-45259a841d3f)
+    (on microwave_1af17e47-9378-43ce-8a4d-1b05b903588b shelf_1dee60b5-7ce1-4e31-b559-0cb432bc0f44)
+    (on knife_73b533f8-37fa-417f-a860-967bd9736ac5 tv_stand_ddcd3678-7c40-4b1f-a67c-5f7d9e1a84d4)
+    (on microwave_31dd697c-b245-460d-aac1-d1f618036443 counter_top_2b046b0a-d7ad-4c3d-b85d-6242be930982)
+    (on towel_roll_96a2795b-0844-4a8f-984a-8d446918aba0 shelf_1dee60b5-7ce1-4e31-b559-0cb432bc0f44)
+    (on bottle_c041e151-31e2-4ee7-a7f2-fed0fa5a38da counter_top_32af91c8-1827-413c-84a3-45259a841d3f)
+  ))
+Time to first token: 10.4605
+Tokens Per Second: 37.82315662408209
+Response Token Count: 375

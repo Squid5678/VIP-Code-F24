@@ -1,0 +1,10 @@
+(:goal (and 
+  (cleared table_3e269624-7055-4d4a-a3ba-979ae855d94d)
+  (cleared sink_c82c6197-e65e-4002-b3b6-26666d72c7cf)
+  (clearable garbage_can_b5373b49-6c42-4a15-97a9-a058c07e2e95)
+  (at smartphone_0ab722be-9b47-4fcf-8d79-87449cd8643d table_3e269624-7055-4d4a-a3ba-979ae855d94d)
+  (on ladle_9c4e36e1-c8bb-4b88-a6f5-f42fcb480fb4 sink_c82c6197-e65e-4002-b3b6-26666d72c7cf)
+))
+Time to first token: 6.1463
+Tokens Per Second: 36.72668924942057
+Response Token Count: 205

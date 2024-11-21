@@ -1,0 +1,19 @@
+(declare (sort ?a action))
+(define (goal) (and 
+                (at ?kitchen sink_37a650b7-e812-4e43-8bff-9c603557ba71)
+                (at ?robo tv_stand_8d47feab-e95c-4d0b-a204-8a3cf4136ab3)
+                (at ?cup counter_top_b364a240-9cc2-4aae-8dae-74871655644e)
+                (at ?towel_roll sink_37a650b7-e812-4e43-8bff-9c603557ba71)
+                (at ?pan cooktop_13751e29-f7c2-4117-8f99-36d95eb05d0c)
+                (at ?microwave counter_top_b364a240-9cc2-4aae-8dae-74871655644e)
+                (at ?knife shelf_a5f12073-8555-4ffc-9ffd-076fd7ea87fa)
+                (at ?bottle counter_top_49054512-858e-4b19-93f4-c38eaad1873d)
+                (at ?fork sink_37a650b7-e812-4e43-8bff-9c603557ba71)
+                (at ?pencil shelf_a5f12073-8555-4ffc-9ffd-076fd7ea87fa)
+                (at ?action_figure table_b8731da1-e735-4493-88a3-3f446cacc9a4)
+                (at ?desk ?kitchen)
+                (at ?robo ?kitchen)
+            ))
+Time to first token: 10.373
+Tokens Per Second: 37.766497461928935
+Response Token Count: 371

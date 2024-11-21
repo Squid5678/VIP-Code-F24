@@ -1,0 +1,15 @@
+(declare (sort objects))
+(define (goal)
+  (and
+    (= (at laptop_ef7b0082-5709-4131-bafa-8ea2a011a127 counter_top_597a6313-d0f2-4f34-92b1-841ef67f9953) t)
+    (= (at smartphone_021a5dd6-12cc-46cb-ada5-a29d38da9410 counter_top_597a6313-d0f2-4f34-92b1-841ef67f9953) t)
+    (= (at ladle_499feac5-430e-441d-8768-29c3febdad0e counter_top_597a6313-d0f2-4f34-92b1-841ef67f9953) t)
+    (= (at bottle_d14b74ac-ba9f-4ce9-9fb3-f7de14b30d04 counter_top_597a6313-d0f2-4f34-92b1-841ef67f9953) t)
+    (= (at knife_b0995f6e-5d43-400f-a548-50764f45783d counter_top_8e73ecf0-d018-4850-90b6-2aad732f7249) t)
+    (= (at knife_b58199e2-5e6d-4a54-b130-442df0b2079f counter_top_8e73ecf0-d018-4850-90b6-2aad732f7249) t)
+    (= (at pot_61aa3960-99b8-4411-8a7c-105521aeac68 cooktop_1a6e4db6-3459-4d36-a622-7ca95b438937) t)
+  )
+)
+Time to first token: 11.7597
+Tokens Per Second: 37.08005718370265
+Response Token Count: 414

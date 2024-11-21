@@ -1,0 +1,79 @@
+(define (goal)
+  (= (holds-at (clean ?x) world) true)
+  (= (holds-at (on-table ?x) world) false)
+  (forall (?x) (= (holds-at (in-sink ?x) world) false))
+  (forall (?x) (= (holds-at (in-shelf ?x) world) false))
+  (= (holds-at (clean-kitchen) world) true)
+)
+
+(define (problem)
+  (= (holds-at (clean ?x) world) true)
+  (forall (?x) (and 
+                (or (holds-at (on-table ?x) world) 
+                    (holds-at (in-sink ?x) world) 
+                    (holds-at (in-shelf ?x) world)) 
+                (not (holds-at (clean ?x) world))))
+  (= (holds-at (clean-kitchen) world) false)
+)
+
+(define (domain kitchen)
+  (:types
+    - action
+    - object
+    )
+  (:predicates
+    (on-table ?o - object)
+    (in-sink ?o - object)
+    (in-shelf ?o - object)
+    (clean ?o - object)
+    (holds-at ?p - predicate ?t - time)
+    (clean-kitchen)
+    )
+  (:action clean-object
+    :parameters (?x - object)
+    :preconditions (and 
+                     (not (holds-at (clean ?x) world))
+                     (or (holds-at (on-table ?x) world) 
+                         (holds-at (in-sink ?x) world) 
+                         (holds-at (in-shelf ?x) world)))
+    :effects (and 
+               (holds-at (clean ?x) world)
+               (= (holds-at (on-table ?x) world) false)
+               (forall (?y) (and 
+                             (not (= ?y ?x)) 
+                             (or (holds-at (in-sink ?y) world) 
+                                 (holds-at (in-shelf ?y) world)))))
+    )
+  (:action put-on-table
+    :parameters (?x - object)
+    :preconditions (and 
+                     (holds-at (clean ?x) world)
+                     (not (holds-at (on-table ?x) world)))
+    :effects (and 
+               (= (holds-at (on-table ?x) world) true))
+    )
+  (:action put-in-sink
+    :parameters (?x - object)
+    :preconditions (and 
+                     (holds-at (clean ?x) world)
+                     (not (holds-at (in-sink ?x) world)))
+    :effects (and 
+               (= (holds-at (in-sink ?x) world) true))
+    )
+  (:action put-in-shelf
+    :parameters (?x - object)
+    :preconditions (and 
+                     (holds-at (clean ?x) world)
+                     (not (holds-at (in-shelf ?x) world)))
+    :effects (and 
+               (= (holds-at (in-shelf ?x) world) true))
+    )
+  (:action clean-kitchen
+    :parameters ()
+    :preconditions (forall (?x) (holds-at (clean ?x) world))
+    :effects (= (holds-at (clean-kitchen) world) true)
+    )
+  )
+Time to first token: 18.8607
+Tokens Per Second: 37.90771244682011
+Response Token Count: 694

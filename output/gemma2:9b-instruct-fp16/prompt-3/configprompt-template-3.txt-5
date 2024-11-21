@@ -1,0 +1,19 @@
+(goal (and 
+   (at robot kitchen)
+   (holding-robot pencil)
+   (on-counter-top pencil)
+   (not (at apple kitchen))
+   (not (at desk_lamp kitchen))
+   (not (at knife kitchen))
+   (not (at coffee_table kitchen))
+   (not (at garbage_can kitchen))
+   (not (at watch kitchen))
+   (not (at spray_bottle kitchen))
+   (not (at box_of_tissues kitchen))
+   (not (at bottle kitchen)))) 
+
+
+
+Time to first token: 5.4864
+Tokens Per Second: 26.619157409348144
+Response Token Count: 106

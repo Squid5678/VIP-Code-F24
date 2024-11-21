@@ -1,0 +1,21 @@
+(open 
+  (and
+    (at table_df53c043-ca24-45b2-9ca4-c830b8c23d04 cup_123c0472-7cd1-4212-b4f4-4e9c725b70c7)
+    (at table_df53c043-ca24-45b2-9ca4-c830b8c23d04 grapes_1cc5aa79-bb13-47bb-9198-1c2031e5ac2c)
+    (at table_df53c043-ca24-45b2-9ca4-c830b8c23d04 spray_bottle_013a2624-004e-4779-ae25-4b986b1425d9)
+    (at table_df53c043-ca24-45b2-9ca4-c830b8c23d04 desk_lamp_962bf646-2799-4790-aa27-9540d4a2f943)
+    (at chair_ff5bfb0b-2e89-41bd-b497-4c60f183c24d knife_f11c0d5e-5c88-4b03-b652-9ff4364c51eb)
+    (at side_table_70bf88b9-a88c-4e71-b2f2-30e671082962 knife_f11c0d5e-5c88-4b03-b652-9ff4364c51eb)
+    (at shelf_cd5c8324-818f-40b0-b76f-bae21e8d3c01 house_plant_1493c204-2d58-4e59-898e-bb43858157d9)
+    (at garbage_can_0dc9804c-a898-4171-8855-e7b0c228719e bottle_36e7b70f-1e54-4c14-9727-a689f67651c4)
+    (at garbage_can_0dc9804c-a898-4171-8855-e7b0c228719e bottle_27a46de0-adb6-465f-a485-06f6126f2bf8)
+    (at table_df53c043-ca24-45b2-9ca4-c830b8c23d04 bottle_5a7289e4-cc32-47cb-a7d0-33c6f009f201)
+    (at tv_stand_d3223bf7-aaf0-485b-9058-52a10e7ab8b0 toaster_63a66df6-0aa7-4328-a0ca-fb40aa7f1478)
+    (at top_cabinet_34f1e3f3-fc3a-493b-b999-23c9ba40239b laptop_03ab2001-50ef-4694-81d7-d426779c54a4)
+    (at shelf_b2abdd1c-c9b6-42d5-adda-3416e803f208 knife_72154341-f519-4eae-bfcd-9aeebe1060d8)
+    (at top_cabinet_34f1e3f3-fc3a-493b-b999-23c9ba40239b knife_72154341-f519-4eae-bfcd-9aeebe1060d8)
+  )
+)
+Time to first token: 20.6077
+Tokens Per Second: 37.94064927305318
+Response Token Count: 761

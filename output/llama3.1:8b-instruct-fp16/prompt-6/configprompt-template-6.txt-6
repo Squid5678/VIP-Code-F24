@@ -1,0 +1,145 @@
+(define (domain cooking)
+  (:requirements :strips)
+  (:types
+   room
+   object
+   kitchen
+   counter-top
+   cooktop
+   microwave
+   sink
+   shelf
+   tv-stand
+   table
+   )
+  (:predicates
+   (in ?o - object ?r - room)
+   (on-table ?o - object ?t - table)
+   (on-counter-top ?o - object ?ct - counter-top)
+   (on-cooktop ?o - object ?c - cooktop)
+   (inside-microwave ?o - object ?m - microwave)
+   (in-sink ?o - object ?s - sink)
+   (on-shelf ?o - object ?sh - shelf)
+   (tv-stand ?o - object ?ts - tv-stand)
+   )
+  (:action clean
+    :parameters (?o - object)
+    :preconditions
+    (and (in ?o kitchen) 
+         (not (inside-microwave ?o)))
+    :effects
+    (and (in ?o kitchen) 
+         (not (inside-microwave ?o))
+         )
+   )
+  (:action put-on-table
+    :parameters (?o - object)
+    :preconditions
+    (and (in ?o kitchen) 
+         (on-counter-top ?o counter-top-0))
+    :effects
+    (and (in ?o kitchen) 
+         (not (on-counter-top ?o counter-top-0))
+         (on-table ?o table-0)
+         )
+   )
+  (:action put-on-counter-top
+    :parameters (?o - object)
+    :preconditions
+    (and (in ?o kitchen) 
+         (not (inside-microwave ?o)))
+    :effects
+    (and (in ?o kitchen) 
+         (not (on-table ?o table-0))
+         (not (on-shelf ?o shelf-0))
+         )
+   )
+  (:action put-on-cooktop
+    :parameters (?o - object)
+    :preconditions
+    (and (in ?o kitchen) 
+         (not (inside-microwave ?o)))
+    :effects
+    (and (in ?o kitchen) 
+         (not (on-table ?o table-0))
+         )
+   )
+  (:action put-on-shelf
+    :parameters (?o - object)
+    :preconditions
+    (and (in ?o kitchen) 
+         (not (inside-microwave ?o)))
+    :effects
+    (and (in ?o kitchen) 
+         (not (on-table ?o table-0))
+         )
+   )
+  (:action put-on-tv-stand
+    :parameters (?o - object)
+    :preconditions
+    (and (in ?o living-room) 
+         (tv-stand ?o tv-stand-0))
+    :effects
+    (and (in ?o living-room) 
+         (not (tv-stand ?o tv-stand-0)))
+   )
+)
+
+(define (problem pddl-prob)
+  (:domain cooking)
+  (:objects
+   kitchen - room
+   counter-top-0 - counter-top
+   cooktop-0 - cooktop
+   microwave-0 - microwave
+   sink-0 - sink
+   shelf-0 - shelf
+   tv-stand-0 - tv-stand
+   table-0 - table
+   robo - object
+   pan - object
+   fork - object
+   knife - object
+   bottle - object
+   towel-roll - object
+   action-figure - object
+   action-figure-1 - object
+   action-figure-2 - object
+   spoon - object
+   )
+  (:init
+   (in robo kitchen)
+   (on-counter-top pan counter-top-0)
+   (on-shelf fork shelf-0)
+   (in-sink knife sink-0)
+   (inside-microwave towel-roll microwave-0)
+   (tv-stand action-figure tv-stand-0)
+   )
+  (:goal
+    (and 
+      (clean robo) 
+      (put-on-counter-top robo) 
+      (put-on-shelf robo) 
+      (put-on-cooktop pan)
+      (put-on-sink knife)
+      (put-on-microwave towel-roll)
+      (free tv-stand action-figure-1)
+    )
+   )
+)
+
+
+(define (goal pddl-prob)
+  '(
+    (clean robo)
+    (put-on-counter-top robo)
+    (put-on-shelf robo)
+    (put-on-cooktop pan)
+    (put-on-sink knife)
+    (inside-microwave towel-roll microwave-0)
+    (tv-stand action-figure tv-stand-0)
+  )
+)
+Time to first token: 26.9443
+Tokens Per Second: 38.00870717395419
+Response Token Count: 1003

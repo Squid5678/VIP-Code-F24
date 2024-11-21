@@ -1,0 +1,12 @@
+(:goal
+  (and 
+    (holding robo kitchen_counter)
+    (holding robo living_room_counter)
+    (at_location robo kitchen_counter)
+    (at_location robo living_room_counter)
+    (free robo)
+  )
+)
+Time to first token: 2.0027
+Tokens Per Second: 35.88354773188897
+Response Token Count: 52

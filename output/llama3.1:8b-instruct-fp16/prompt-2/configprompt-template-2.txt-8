@@ -1,0 +1,9 @@
+(:goal
+  (and 
+    (at-table smartphone_0ab722be-9b47-4fcf-8d79-87449cd8643d table_3e269624-7055-4d4a-a3ba-979ae855d94d)
+    (at-table cup_6cd691e5-00e9-4578-a944-358efd426c83 table_3e269624-7055-4d4a-a3ba-979ae855d94d)
+  )
+)
+Time to first token: 3.7885
+Tokens Per Second: 35.71428571428571
+Response Token Count: 115

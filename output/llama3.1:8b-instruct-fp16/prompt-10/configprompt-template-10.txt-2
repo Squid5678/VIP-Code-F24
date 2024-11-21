@@ -1,0 +1,133 @@
+(declare
+  (types 
+    object
+    location
+    tool-type
+    appliance-type
+    kitchen-appliance-type
+    cookware-type
+    food-container-type
+    utensil-type
+    table-setting-type
+  )
+  (predicates 
+    (at ?x - object ?loc - location)
+    (clear ?x - object)
+    (on-table ?x - object ?loc - location)
+    (on-counter ?x - object ?loc - location)
+    (in-sink ?x - object ?loc - location)
+    (free-robo)
+  )
+  (functions 
+    (?robot)
+  )
+)
+
+(define (domain kitchen-domain)
+  (:requirements :strips)
+  (:types object location tool-type appliance-type kitchen-appliance-type cookware-type food-container-type utensil-type table-setting-type)
+  (:predicates
+    (at ?x - object ?loc - location)
+    (clear ?x - object)
+    (on-table ?x - object ?loc - location)
+    (on-counter ?x - object ?loc - location)
+    (in-sink ?x - object ?loc - location)
+    (free-robo)
+  )
+  (:action pick-up 
+    :parameters (?o1 - object ?l1 - location)
+    :preconditions (and
+      (at ?o1 ?l1)
+      (clear ?o1)
+    )
+    :effects (and
+      (not (at ?o1 ?l1))
+      (on-robo ?o1)
+    )
+  )
+  (:action put-down 
+    :parameters (?o2 - object ?l2 - location)
+    :preconditions (and
+      (on-robo ?o2)
+    )
+    :effects (and
+      (at ?o2 ?l2)
+      (clear ?o2)
+    )
+  )
+  (:action clear-object 
+    :parameters (?o3 - object ?l3 - location)
+    :preconditions (and
+      (at ?o3 ?l3)
+    )
+    :effects (clear ?o3)
+  )
+  (:action move-to-table 
+    :parameters (?o4 - object ?t1 - table-setting-type)
+    :preconditions (and
+      (not (on-table ?o4))
+      (free-robo)
+    )
+    :effects (and
+      (at ?o4 ?t1)
+      (on-table ?o4 ?t1)
+    )
+  )
+  (:action move-to-counter 
+    :parameters (?o5 - object ?c1 - counter-type)
+    :preconditions (and
+      (not (on-counter ?o5))
+      (free-robo)
+    )
+    :effects (and
+      (at ?o5 ?c1)
+      (on-counter ?o5 ?c1)
+    )
+  )
+  (:action move-to-sink 
+    :parameters (?o6 - object ?s1 - sink-type)
+    :preconditions (and
+      (not (in-sink ?o6))
+      (free-robo)
+    )
+    :effects (and
+      (at ?o6 ?s1)
+      (in-sink ?o6 ?s1)
+    )
+  )
+)
+
+(define (problem kitchen-problem)
+  (:domain kitchen-domain)
+  (:objects 
+    o1 - object
+    o2 - object
+    o3 - object
+    o4 - object
+    o5 - object
+    o6 - object
+    l1 - location
+    l2 - location
+    t1 - table-setting-type
+    c1 - counter-type
+    s1 - sink-type
+  )
+  (:init 
+    (at o1 l1)
+    (clear o1)
+    (on-robo none)
+    (free-robo)
+  )
+  (:goal 
+    (and 
+      (on-table o4 t1)
+      (on-counter o5 c1)
+      (in-sink o6 s1)
+    )
+  )
+)
+
+)
+Time to first token: 22.6036
+Tokens Per Second: 38.08704315927721
+Response Token Count: 840

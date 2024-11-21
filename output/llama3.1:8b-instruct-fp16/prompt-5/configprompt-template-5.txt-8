@@ -1,0 +1,23 @@
+(declare
+  (?robo - robot)
+  (?obj1 - object)
+  (?obj2 - object)
+  (?obj3 - object)
+  (?obj4 - object)
+  (?obj5 - object)
+)
+
+(:goal (and 
+    (on-table ?robo)
+    (= (holds ?robo) null)
+))
+
+(:method
+  ((free robo)
+   ((clear ?robo)
+    (and 
+      (free ?robo)
+      (at ?robo table_df53c043-ca24-45b2-9ca4-c830b8c23d04))))))
+Time to first token: 3.9826
+Tokens Per Second: 37.294015611448394
+Response Token Count: 128

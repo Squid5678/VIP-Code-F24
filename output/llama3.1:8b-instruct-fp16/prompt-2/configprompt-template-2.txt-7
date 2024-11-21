@@ -1,0 +1,6 @@
+(:goal (and 
+  (at_location robo table_3e269624-7055-4d4a-a3ba-979ae855d94d) 
+  (at_location ladle_9c4e36e1-c8bb-4b88-a6f5-f42fcb480fb4 sink_c82c6197-e65e-4002-b3b6-26666d72c7cf))
+Time to first token: 3.1827
+Tokens Per Second: 35.957607872823615
+Response Token Count: 94

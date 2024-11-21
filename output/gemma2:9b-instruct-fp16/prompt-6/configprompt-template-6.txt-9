@@ -1,0 +1,7 @@
+(goal (and 
+      (at robo counter_top_7c2bbaff-2ba8-4f1f-b239-7d82f9c14ce3)
+      (holding robo bottle_d952ef00-dc05-41bc-bde6-48e442b78de9)
+      ))
+Time to first token: 4.0619
+Tokens Per Second: 26.284348864994026
+Response Token Count: 69

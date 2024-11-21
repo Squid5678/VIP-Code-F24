@@ -1,0 +1,10 @@
+(goal (and 
+	(at robot kitchen)
+	(holding robot bottle)
+)) 
+
+
+
+Time to first token: 1.6683
+Tokens Per Second: 24.922118380062305
+Response Token Count: 17

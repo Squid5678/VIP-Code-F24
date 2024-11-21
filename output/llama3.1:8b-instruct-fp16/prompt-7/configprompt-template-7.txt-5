@@ -1,0 +1,6 @@
+( :incomplete )
+
+(:goal (at-location robo counter_top_a7c48973-8ffa-4519-979a-b36a2831e9c1))
+Time to first token: 1.65
+Tokens Per Second: 34.666666666666664
+Response Token Count: 38

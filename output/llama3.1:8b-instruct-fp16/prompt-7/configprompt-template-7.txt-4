@@ -1,0 +1,10 @@
+(:goal
+   (and 
+     (at ?g kitchen)
+     (in ?t sink_f0b1e0a6-32e3-4802-bc8d-03a833343c34)
+     (in ?k microwave_04103ebe-81b9-46da-86fd-b623101b12eb)
+   )
+)
+Time to first token: 2.6672
+Tokens Per Second: 36.41456582633053
+Response Token Count: 78

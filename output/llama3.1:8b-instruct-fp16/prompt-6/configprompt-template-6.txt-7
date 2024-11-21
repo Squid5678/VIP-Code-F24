@@ -1,0 +1,79 @@
+(inheritance
+  (:goal robot-clears-clutter)
+  (:and
+    (at robot location:home)
+    (clear-all clutter)
+  )
+)
+
+(derivation
+  (robot-clears-clutter :-
+    (at robot location:home)
+    (clear-all clutter)
+  )
+)
+
+(define (domain clear-clutter)
+  (:requirements :strips)
+  (:types 
+    clutter 
+    location 
+    robot 
+  )
+  (:predicates 
+    (at ?x - robot ?y - location) 
+    (clear ?x - clutter) 
+    (in ?x - clutter ?y - location) 
+  )
+  (:action clear-clutter 
+    :parameters (?robot - robot ?clutter - clutter ?location - location)
+    :preconditions 
+      (and
+        (at ?robot ?location)
+        (in ?clutter ?location)
+        (not (clear ?clutter))
+      )
+    :effects 
+      (and
+        (clear ?clutter)
+        (not (in ?clutter ?location))
+      )
+  )
+)
+
+(define (problem clutter-clearing)
+  (:domain clear-clutter)
+  (:objects 
+    robot - robot
+    home - location
+    kitchen - location
+    living-room - location
+    counter-top - location
+    shelf - location
+    sink - location
+    tv-stand - location
+    microwave - object
+    pan - object
+    towel-roll - object
+    fork - object
+    bottle - object
+  )
+  (:init 
+    (at robot home)
+    (clear-all clutter)
+    (in clutter1 kitchen)
+    (in clutter2 living-room)
+    (in clutter3 counter-top)
+    (in clutter4 shelf)
+    (in clutter5 sink)
+    (in clutter6 tv-stand)
+    (clear microwave)
+    (clear pan)
+    (clear towel-roll)
+    (clear fork)
+    (clear bottle)
+  )
+)
+Time to first token: 11.3323
+Tokens Per Second: 37.66077542333672
+Response Token Count: 406

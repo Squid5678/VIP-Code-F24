@@ -1,0 +1,6 @@
+(define (goal)
+  (= (count ?x (holds-at ?fact)) 0)
+)
+Time to first token: 1.1863
+Tokens Per Second: 32.45749613601237
+Response Token Count: 20

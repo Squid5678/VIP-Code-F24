@@ -1,0 +1,24 @@
+(and 
+  (at robot kitchen)
+  (holding-nothing robot)
+  (on counter_top knife)
+  (on counter_top fork)
+  (on counter_top spoon)
+  (in dishwasher cup)
+  (in dishwasher glass)
+  (on shelf tomatoes)
+  (on shelf grapes)
+  (on shelf salt_shaker)
+  (on shelf pepper_shaker)
+  (on shelf spray_bottle)
+  (in refrigerator soda)
+  (in refrigerator milk)
+  (on table towel)
+  (on table plate)
+  (on table cup)
+  (on table ladle)
+  (free robo)
+)
+Time to first token: 6.5234
+Tokens Per Second: 26.77165354330709
+Response Token Count: 128

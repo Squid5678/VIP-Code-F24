@@ -1,0 +1,117 @@
+(declare (type action-action-figure))
+; (action pick-up 
+;   :parameters (?a - object ?g - graspable)
+;   :preconditions (and 
+;                    (holds ?h ?g)
+;                    (ontable ?a)
+;                   )
+;   :effects
+;   (and
+;     (= (hold ?a) ?g)
+;     (not (holds ?h ?g))
+;   )
+)
+
+(declare (type action-pick-up-action-figure)
+	(action pick-up-action-figure 
+    :parameters (?a - object ?g - graspable)
+    :preconditions (and 
+                    (holds ?h ?g)
+                    (ontable ?a)
+                   )
+    :effects
+    (and
+      (= (hold ?a) ?g)
+      (not (holds ?h ?g))
+    )
+  )
+)
+
+(declare (type action-free-robo)
+	(action free-robo 
+;   :parameters (?t - time ?r - robot)
+    :parameters (?r - robot)
+    :preconditions
+     (and 
+      (= (time) ?t)
+    )
+    :effects
+    (holds robofree ?r)
+  )
+)
+
+(declare (type goal))
+; (goal 
+;   (and
+;      (ontable table_b637666e-7e8a-4edc-ac80-c7606584b290)
+;     (= (time) ?t)
+;     (= 1 ?v)
+;   )
+; )
+
+(goal
+  (and
+    (free robo)
+  )
+)
+
+(declare (type action-free-robo)
+	(action free-robo 
+;   :parameters (?t - time ?r - robot)
+    :parameters (?r - robot)
+    :preconditions
+     (and 
+      (= (time) ?t)
+    )
+    :effects
+    (holds robofree ?r)
+  )
+)
+
+(declare (type goal))
+; (goal 
+;   (and
+;      (ontable table_b637666e-7e8a-4edc-ac80-c7606584b290)
+;     (= (time) ?t)
+;     (= 1 ?v)
+;   )
+; )
+
+(goal
+  (and
+    (free robo)
+  )
+)
+
+(declare (type action-free-robo)
+	(action free-robo 
+;   :parameters (?t - time ?r - robot)
+    :parameters (?r - robot)
+    :preconditions
+     (and 
+      (= (time) ?t)
+    )
+    :effects
+    (holds robofree ?r)
+  )
+)
+
+(declare (type goal))
+; (goal 
+;   (and
+;      (ontable table_b637666e-7e8a-4edc-ac80-c7606584b290)
+;     (= (time) ?t)
+;     (= 1 ?v)
+;   )
+; )
+
+(goal
+  (and
+    (free robo)
+  )
+)
+
+; ...
+Time to first token: 17.3545
+Tokens Per Second: 37.78966131907308
+Response Token Count: 635

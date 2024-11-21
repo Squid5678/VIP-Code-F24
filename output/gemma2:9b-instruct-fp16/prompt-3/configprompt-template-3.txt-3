@@ -1,0 +1,7 @@
+(goal (and 
+   (at robo house)
+   (holding robo pencil_7a2ba6cf-5419-4c41-a89e-afbeea07fd60)
+))
+Time to first token: 2.7618
+Tokens Per Second: 25.916870415647924
+Response Token Count: 43

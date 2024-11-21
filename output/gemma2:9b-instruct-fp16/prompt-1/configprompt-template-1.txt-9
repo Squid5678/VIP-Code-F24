@@ -1,0 +1,6 @@
+(and 
+  (not (holding robot))
+)
+Time to first token: 1.3273
+Tokens Per Second: 23.333333333333332
+Response Token Count: 10

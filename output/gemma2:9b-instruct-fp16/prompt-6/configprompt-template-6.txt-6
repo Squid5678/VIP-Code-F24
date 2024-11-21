@@ -1,0 +1,9 @@
+(goal (and 
+  (at robot kitchen)
+  (holding robot bottle_d952ef00-dc05-41bc-bde6-48e442b78de9))) 
+
+
+
+Time to first token: 2.7371
+Tokens Per Second: 26.121241991128635
+Response Token Count: 38

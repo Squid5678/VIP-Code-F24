@@ -1,0 +1,8 @@
+(close ?robo 
+  (at coffee_table_6273f0df-8757-4b02-aee5-2178e7756601 ?bottle_9e312c9f-cb2a-438a-93dd-3f326c22a2dc)
+  (clear coffee_table_6273f0df-8757-4b02-aee5-2178e7756601 ?robo)
+  (at sink_e28fd521-7d8b-4d5b-a903-74e87b3d55a6 ?knife_2e654ae2-dde2-4655-bd8c-53797f6cb332)
+)
+Time to first token: 4.6468
+Tokens Per Second: 37.099903006789525
+Response Token Count: 152

@@ -1,0 +1,9 @@
+(and 
+  (at robot table_df53c043-ca24-45b2-9ca4-c830b8c23d04)
+) 
+
+
+
+Time to first token: 27.7422
+Tokens Per Second: 25.912215758857748
+Response Token Count: 32

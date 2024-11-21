@@ -1,0 +1,11 @@
+(declare (sort ?a object))
+(define (goal) (and
+  (forall ((?o - object)) 
+    (or (?on-table ?o)
+        (= ?o 'robo)))
+  (forall ((?o1 ?o2)) 
+    (or (not(?on ?o1 ?o2)) (?on-table ?o1)))
+  ))
+Time to first token: 2.6492
+Tokens Per Second: 36.58536585365854
+Response Token Count: 77

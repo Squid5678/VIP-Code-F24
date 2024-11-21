@@ -1,0 +1,7 @@
+(declare (exists ((robo - object)) 
+                  (and 
+                    (at robo table_3e269624-7055-4d4a-a3ba-979ae855d94d) 
+                    (clear robo)))
+Time to first token: 2.0552
+Tokens Per Second: 34.98349834983499
+Response Token Count: 52

@@ -1,0 +1,13 @@
+(goal (and
+	(closed coffee_table 0)
+	(closed side_table 0)
+	(closed counter_top_cde04638_c2b3_498e_ba66_7946cf0754f2 0)
+	(closed counter_top_e3f19c73_a002_48ea_99e1_3ce2e432c634 0)
+	(closed cooktop_1a6e4db6_3459_4d36_a622_7ca95b438937 0)
+	(closed counter_top_8e73ecf0_d018_4850_90b6_2aad732f7249 0)
+	(closed counter_top_597a6313_d0f2_4f34_92b1_841ef67f9953 0)
+	(closed table_ff94dcb7_e210_4168_b0d9_7307c5768a2c 0)
+))
+Time to first token: 47.2252
+Tokens Per Second: 26.511712366079532
+Response Token Count: 207

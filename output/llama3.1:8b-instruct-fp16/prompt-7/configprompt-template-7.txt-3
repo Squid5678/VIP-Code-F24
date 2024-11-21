@@ -1,0 +1,4 @@
+(findall ?o - (closed ?o))
+Time to first token: 0.8986
+Tokens Per Second: 29.411764705882355
+Response Token Count: 10

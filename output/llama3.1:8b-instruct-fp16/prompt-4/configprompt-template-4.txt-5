@@ -1,0 +1,17 @@
+(define (goal)
+
+  (and
+    (forall (?object) 
+      (implies (at ?object table_e06ab610-6bf9-4691-9721-0ab155e2b3ab) (on-table ?object)))
+    (forall (?object) 
+      (implies (at ?object fridge_02a11162-ee09-4268-99e0-da13fde99675) (in-fridge ?object)))
+    (forall (?object) 
+      (implies (at ?object counter_top_d3c84e59-02ae-4b20-81d4-582e884793b7) (on-table ?object)))
+    (forall (?object) 
+      (implies (at ?object shelf_342e0218-a168-41aa-aea7-552a79f4bdca) (on-shelf ?object)))
+  )
+
+)
+Time to first token: 5.9031
+Tokens Per Second: 36.60130718954248
+Response Token Count: 195

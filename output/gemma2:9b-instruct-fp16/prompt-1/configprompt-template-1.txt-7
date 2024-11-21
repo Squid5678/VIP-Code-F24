@@ -1,0 +1,14 @@
+(and 
+  (at robot kitchen)
+  (holding ?x)
+  (closed coffee_maker)
+  (closed door)
+  (on table book)
+  (not (in_hand robot ?object))
+) 
+
+
+
+Time to first token: 2.8436
+Tokens Per Second: 25.980160604629194
+Response Token Count: 43

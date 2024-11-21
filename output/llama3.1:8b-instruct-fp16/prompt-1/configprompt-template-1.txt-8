@@ -1,0 +1,9 @@
+(?goal
+  (and
+   (at robo location:top_cabinet_9522ae1f-a3d8-4205-b1a7-a5130f4ddc88)
+   (at robo location:counter_top_597a6313-d0f2-4f34-92b1-841ef67f9953)
+  )
+)
+Time to first token: 2.8437
+Tokens Per Second: 35.278745644599304
+Response Token Count: 80

@@ -1,0 +1,15 @@
+(declare
+  (?obj - object)
+)
+
+(:goal
+  (and
+    (closed ?obj)
+    (forall (?item - object)
+      (implies (on-table ?item table_fcd776f8-0526-4521-9a47-b651781cf22a) (on-table ?item ?obj))
+      )
+    )
+  )
+Time to first token: 2.7278
+Tokens Per Second: 35.81267217630854
+Response Token Count: 77

@@ -1,0 +1,17 @@
+(and
+  (closed coffee_table_1 a)
+  (closed coffee_table_2 a)
+  (closed shelf_1 a)
+  (closed fridge a)
+  (closed oven a)
+  (closed microwave a)
+  (closed table_ff94dcb7-e210-4168-b0d9-7307c5768a2c a)
+  (closed cooktop_1a6e4db6-3459-4d36-a622-7ca95b438937 a)
+  (closed counter_cde04638-c2b3-498e-ba66-7946cf0754f2 a)
+  (closed counter_top_e3f19c73-a002-48ea-99e1-3ce2e432c634 a)
+  (closed counter_top_8e73ecf0-d018-4850-90b6-2aad732f7249 a)
+  (closed counter_top_597a6313-d0f2-4f34-92b1-841ef67f9953 a)
+)
+Time to first token: 12.4679
+Tokens Per Second: 26.74616695059625
+Response Token Count: 226

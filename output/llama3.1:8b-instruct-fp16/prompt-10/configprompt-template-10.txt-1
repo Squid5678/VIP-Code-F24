@@ -1,0 +1,10 @@
+( :action free-robo :parameters () :preconditions (and (= ?r robo) (free-robo)) :effects (and (= ?r robo) (free-robo))) 
+
+(:goal (and 
+  (= ?s sink_451c9a5c-711c-4bfd-8e83-b0a7c559eaaf)
+  (= ?b bottle_f563ad7e-5c64-4d34-9389-39b0bff0b89e)
+  (free-robo)
+))
+Time to first token: 3.6371
+Tokens Per Second: 37.239165329052966
+Response Token Count: 115

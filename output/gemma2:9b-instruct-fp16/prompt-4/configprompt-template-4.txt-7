@@ -1,0 +1,7 @@
+(goal (and 
+  (at robot shelf_342e0218-a168-41aa-aea7-552a79f4bdca)
+  (holding robot bottle_of_soap_9cd1474f-1614-4516-b9a4-de0e9c87c029)
+))
+Time to first token: 4.28
+Tokens Per Second: 26.471416502393694
+Response Token Count: 65

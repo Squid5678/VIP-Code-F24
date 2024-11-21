@@ -1,0 +1,124 @@
+(define (domain kitchen-domain)
+
+  (:requirements :strips :typing)
+
+  (:types
+   room - object
+   object - object
+   table - object
+   counter-top - object
+   counter - object
+   cooktop - object
+   cabinet - object
+ )
+
+  (:predicates
+   (on ?o - object ?s - object)
+   (cleared ?o - object)
+   (dirty ?o - object)
+   (at-table ?o - object ?t - table)
+   (at-counter-top ?o - object ?ct - counter-top)
+   (at-counter ?o - object ?c - counter)
+   (at-cooktop ?o - object ?co - cooktop)
+   (in-cabinet ?o - object ?ca - cabinet)
+ )
+
+  (:action clear-table
+    :parameters (?t - table)
+    :preconditions (and (table ?t) (not (cleared ?t)))
+    :effects (and (cleared ?t))
+ )
+
+  (:action clear-counter-top
+    :parameters (?ct - counter-top)
+    :preconditions (and (counter-top ?ct) (not (cleared ?ct)))
+    :effects (and (cleared ?ct))
+ )
+
+  (:action clear-counter
+    :parameters (?c - counter)
+    :preconditions (and (counter ?c) (not (cleared ?c)))
+    :effects (and (cleared ?c))
+ )
+
+  (:action clear-cooktop
+    :parameters (?co - cooktop)
+    :preconditions (and (cooktop ?co) (not (cleared ?co)))
+    :effects (and (cleared ?co))
+ )
+
+  (:action put-away-in-cabinet
+    :parameters (?o - object ?ca - cabinet)
+    :preconditions (and (object ?o) (cabinet ?ca) (dirty ?o) (at-table ?o ?t) (table ?t) (not (in-cabinet ?o ?ca)))
+    :effects (and (cleared ?t) (in-cabinet ?o ?ca))
+ )
+
+  (:action put-away-on-table
+    :parameters (?o - object ?t - table)
+    :preconditions (and (object ?o) (table ?t) (dirty ?o) (not (at-table ?o ?t)))
+    :effects (and (cleared ?t) (at-table ?o ?t))
+ )
+
+  (:action put-away-on-counter-top
+    :parameters (?o - object ?ct - counter-top)
+    :preconditions (and (object ?o) (counter-top ?ct) (dirty ?o) (not (at-counter-top ?o ?ct)))
+    :effects (and (cleared ?ct) (at-counter-top ?o ?ct))
+ )
+
+  (:action put-away-on-counter
+    :parameters (?o - object ?c - counter)
+    :preconditions (and (object ?o) (counter ?c) (dirty ?o) (not (at-counter ?o ?c)))
+    :effects (and (cleared ?c) (at-counter ?o ?c))
+ )
+
+  (:action put-away-on-cooktop
+    :parameters (?o - object ?co - cooktop)
+    :preconditions (and (object ?o) (cooktop ?co) (dirty ?o) (not (at-cooktop ?o ?co)))
+    :effects (and (cleared ?co) (at-cooktop ?o ?co))
+ )
+
+  (:action remove
+    :parameters (?t - table)
+    :preconditions (and (table ?t) (cleared ?t))
+    :effects ()
+ )
+)
+
+(define (problem kitchen-problem)
+
+  (:domain kitchen-domain)
+
+  (:objects 
+   robo - object
+   table1 - table
+   counter-top1 - counter-top
+   counter1 - counter
+   cooktop1 - cooktop
+   cabinet1 - cabinet
+ )
+
+  (:init
+
+    (cleared table1)
+    (at-table robo table1)
+    (on robo table1)
+    (table table1)
+    (counter-top counter-top1)
+    (at-counter-top robo counter-top1)
+    (clearing true)
+
+ )
+  (:goal 
+    (and
+      (cleared counter-top1)
+      (cleared counter1)
+      (cleared cooktop1)
+      (cleared cabinet1)
+     )
+ )
+
+  (:metric maximize count)
+)
+Time to first token: 25.7989
+Tokens Per Second: 37.142630870357166
+Response Token Count: 937

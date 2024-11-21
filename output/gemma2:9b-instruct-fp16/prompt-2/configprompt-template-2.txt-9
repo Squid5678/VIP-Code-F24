@@ -1,0 +1,10 @@
+(and (at robot kitchen) 
+  (at counter_top_27528a15-b05c-46b1-971d-64144a5591dd towel_roll_5ca7193d-cb6a-410f-9ea7-649f21a415ba)
+  (at counter_top_27528a15-b05c-46b1-971d-64144a5591dd sink_c82c6197-e65e-4002-b3b6-26666d72c7cf)
+  (at counter_top_27528a15-b05c-46b1-971d-64144a5591dd table_3e269624-7055-4d4a-a3ba-979ae855d94d)
+  (at counter_top_27528a15-b05c-46b1-971d-64144a5591dd robot)
+  (holding nothing robot)
+  ) )
+Time to first token: 12.1332
+Tokens Per Second: 26.82563338301043
+Response Token Count: 203

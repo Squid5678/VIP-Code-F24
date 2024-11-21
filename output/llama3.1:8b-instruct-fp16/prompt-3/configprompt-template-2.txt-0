@@ -1,0 +1,13 @@
+(declare (sort ?goal action))
+(:goal
+  (and 
+    (at robo location:room1)
+    (cleaned kitchen_sink)
+    (cleaned table_3e269624-7055-4d4a-a3ba-979ae855d94d)
+    (cleaned refrigerator)
+    (cleaned garbage_can_b5373b49-6c42-4a15-97a9-a058c07e2e95)
+  )
+)
+Time to first token: 3.384
+Tokens Per Second: 36.267605633802816
+Response Token Count: 102

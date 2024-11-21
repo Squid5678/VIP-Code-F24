@@ -1,0 +1,13 @@
+(and
+  (at robot 3)
+  (holding-robot apple)
+  (holding-robot pencil)
+  (on garbage_can knife)
+  (on counter_top box_of_tissues)
+  (in garbage_can bottle)
+  (in garbage_can spray_bottle)
+  (in garbage_can watch)
+)
+Time to first token: 3.7817
+Tokens Per Second: 26.418786692759294
+Response Token Count: 64

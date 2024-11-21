@@ -1,0 +1,9 @@
+(and 
+ (at robot shelf_9e2f352b-e92b-4cef-859b-90ca5a952283 pencil_b38619e0-ec32-4165-a724-b0acf343b178) 
+ (at robot shelf_9e2f352b-e92b-4cef-859b-90ca5a952283 knife_1e252df6-8e58-4352-b6ab-2d62a257228c) 
+ (at robot shelf_9e2f352b-e92b-4cef-859b-90ca5a952283 towel_roll_d4d7b8a3-1cdb-45ed-8290-f1c3ef6c96bc) 
+ (at robot shelf_9e2f352b-e92b-4cef-859b-90ca5a952283 bottle_a2f94b4b-b175-4529-a593-4a83e6916fcb) 
+ (at robot shelf_9e2f352b-e92b-4cef-859b-90ca5a952283 fork_d17c1066-3fc4-42dc-a7fd-20683b74b2c1))
+Time to first token: 15.0119
+Tokens Per Second: 26.98545861297539
+Response Token Count: 268

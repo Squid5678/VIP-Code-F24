@@ -1,0 +1,10 @@
+(:goal 
+  (and
+    (= (location robo) table_df53c043-ca24-45b2-9ca4-c830b8c23d04)
+    (= (location top_cabinet_34f1e3f3-fc3a-493b-b999-23c9ba40239b) garbage_can_0dc9804c-a898-4171-8855-e7b0c228719e)
+    (= (location laptop_03ab2001-50ef-4694-81d7-d426779c54a4) top_cabinet_34f1e3f3-fc3a-493b-b999-23c9ba40239b)
+  )
+)
+Time to first token: 4.7357
+Tokens Per Second: 37.29216152019002
+Response Token Count: 156

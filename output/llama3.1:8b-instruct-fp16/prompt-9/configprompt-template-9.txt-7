@@ -1,0 +1,6 @@
+(:goal (and 
+  (at-location robo coffee_table_6273f0df-8757-4b02-aee5-2178e7756601)
+))
+Time to first token: 1.6569
+Tokens Per Second: 34.42188879082083
+Response Token Count: 38

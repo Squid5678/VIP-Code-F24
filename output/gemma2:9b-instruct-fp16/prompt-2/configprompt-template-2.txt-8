@@ -1,0 +1,7 @@
+(goal (and 
+(at robot counter_top_27528a15_b05c_46b1_971d_64144a5591dd)
+(holding towel_roll_5ca7193d_cb6a_410f_9ea7_649f21a415ba)
+)))
+Time to first token: 4.2257
+Tokens Per Second: 26.315789473684212
+Response Token Count: 60

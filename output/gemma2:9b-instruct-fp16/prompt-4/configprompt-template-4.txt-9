@@ -1,0 +1,20 @@
+(and 
+  (at robot shelf_342e0218-a168-41aa-aea7-552a79f4bdca bottle_of_soap_9cd1474f-1614-4516-b9a4-de0e9c87c029)
+  (at robot fridge_02a11162-ee09-4268-99e0-da13fde99675 spoon_70d77d26-b7ff-47ee-9f2a-b18e375a0ccf)
+  (at robot counter_top_d3c84e59-02ae-4b20-81d4-582e884793b7 pot_0c4951ea-21be-40ff-b06d-ac5e3f6f7d82)
+  (at robot counter_top_d3c84e59-02ae-4b20-81d4-582e884793b7 microwave_030c992c-30f3-4164-afc3-b86eb4bc5c64)
+  (at robot sink_de74966c-95ff-48d3-b44a-ad3e91d12913 pot_7857727c-3a80-45fc-9c39-0eec2959e605)
+  (at robot table_fcd776f8-0526-4521-9a47-b651781cf22a knife_1ed00fe1-20a9-47db-8b8b-e768da9073a9)
+  (at robot table_e06ab610-6bf9-4691-9721-0ab155e2b3ab pencil_6bd2a80a-a2b1-405e-a970-cc4c48d8bcf5)
+  (at robot table_e06ab610-6bf9-4691-9721-0ab155e2b3ab knife_1ed00fe1-20a9-47db-8b8b-e768da9073a9)
+  (at robot table_e06ab610-6bf9-4691-9721-0ab155e2b3ab knife_3722a3f3-2cec-4495-9a41-0c27a12259f5)
+  (at robot table_e06ab610-6bf9-4691-9721-0ab155e2b3ab spray_bottle_fd96b4c2-7e50-42de-8a67-30b5491b296f)
+  (at robot table_e06ab610-6bf9-4691-9721-0ab155e2b3ab bottle_bc8511c4-3273-4804-924a-26b49645c4d0)
+  (at robot table_e06ab610-6bf9-4691-9721-0ab155e2b3ab potato_6eff6e52-142b-4f67-801a-cdad027b5d50)
+) 
+
+
+
+Time to first token: 35.1861
+Tokens Per Second: 26.90153515772367
+Response Token Count: 658

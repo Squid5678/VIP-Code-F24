@@ -1,0 +1,58 @@
+(define (problem my-problem)
+  (:domain furniture-domain)
+  (:objects
+   chair - object
+   desk-lamp - object
+   cup - object
+   grapes - object
+   spray-bottle - object
+   tv-stand - object
+   toaster - object
+   laptop - object
+   knife - object
+   garbage-can - object
+   table - object
+   bottle - object
+   remote-control - object
+   robo - robot
+   top-cabinet - cabinet
+   shelf - cabinet
+   side-table - cabinet
+   tv-stand - cabinet
+   chair - furniture
+   desk-lamp - furniture
+   cup - food
+   grapes - food
+   spray-bottle - cleaning-supply
+   )
+
+  (:goal (and 
+       (at robo top-cabinet)
+       (on laptop top-cabinet)
+       (clear top-cabinet)
+       (at robo shelf)
+       (clear shelf)
+       (at robo side-table)
+       (on knife side-table)
+       (clear side-table)
+       (at robo tv-stand)
+       (clear tv-stand)
+       (at robo chair)
+       (on desk-lamp chair)
+       (clear chair)
+       (at robo table)
+       (on cup table)
+       (on grapes table)
+       (on spray-bottle table)
+       (on desk-lamp table)
+       (clear table)
+       (at robo garbage-can)
+       (on bottle garbage-can)
+       (on bottle garbage-can)
+       (clear garbage-can)
+       )
+    )
+)
+Time to first token: 9.1646
+Tokens Per Second: 37.860368183397014
+Response Token Count: 326

@@ -1,0 +1,16 @@
+(declare
+  (?cup - object)
+  (?pan - object)
+  (?knife - object)
+)
+
+(goal
+  (and
+    (close ?cup)
+    (close ?pan)
+    (close ?knife)
+  )
+)
+Time to first token: 1.9412
+Tokens Per Second: 35.16174402250351
+Response Token Count: 49

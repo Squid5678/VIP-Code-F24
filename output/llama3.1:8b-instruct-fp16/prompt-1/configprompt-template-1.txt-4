@@ -1,0 +1,13 @@
+(close robo 
+  ;(and 
+;   (on table knife_662366d6-62f8-45b9-aa85-743648832470)
+;   (on table knife_778280cc-86ea-4d1d-b00f-ac1ce8678ef1)
+;   (on table knife_959b1111-4ba0-4a94-a1cf-d2e4aa38a728)
+;   (on table desk_lamp_e2e19f7f-f38f-48b0-9d1b-e1f9cbf9d905)
+;   (on cooktop pot_61aa3960-99b8-4411-8a7c-105521aeac68)
+;   (on counter bottle_8ec556b4-38ab-4110-a85d-089e1e6ceaa6)
+  )
+)
+Time to first token: 5.9384
+Tokens Per Second: 37.05762460626274
+Response Token Count: 199

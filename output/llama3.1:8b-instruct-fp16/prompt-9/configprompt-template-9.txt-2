@@ -1,0 +1,7 @@
+(:goal (and
+  (on-table ?obj ?table)
+  (clear ?obj))
+)
+Time to first token: 1.1801
+Tokens Per Second: 33.23262839879154
+Response Token Count: 21

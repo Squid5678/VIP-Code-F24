@@ -1,0 +1,376 @@
+(declare
+  (:metric maximize total-cost)
+
+  (:goal (and 
+    (= (total-cost) 0)))
+
+  (:domain kitchen-objects-domain
+    :types object 
+    :predicates (at ?x - object ?z - zone)
+    :functions (total-cost))
+
+  (:requirements :typing :strips)
+
+  (:action close 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen) 
+        (not (closed-at ?x)))
+    :effect 
+      (and 
+        (close-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-close))))
+
+  (:action open 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen) 
+        (closed-at ?x))
+    :effect 
+      (and 
+        (open-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-open))))
+
+  (:action free-robo 
+    :parameters ()
+    :duration (* robo 1) 
+    :conditions 
+      (at robo kitchen)
+    :effect 
+      (and 
+        (free robo)
+        (= (total-cost) (+ (total-cost) cost-of-free-robo))))
+
+  (:action pick-up 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (not (holding ?x)))
+    :effect 
+      (and 
+        (pick-up-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-pickup))))
+
+  (:action drop 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (holding ?x))
+    :effect 
+      (and 
+        (drop-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-drop))))
+
+  (:action put-on-table 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (not (on-table ?x)))
+    :effect 
+      (and 
+        (put-on-table-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-puton))))
+
+  (:action put-in-sink 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (not (in-sink ?x)))
+    :effect 
+      (and 
+        (put-in-sink-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-putin))))
+
+  (:action put-on-counter-top 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (not (on-counter-top ?x)))
+    :effect 
+      (and 
+        (put-on-counter-top-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-putontop))))
+
+  (:action put-in-garbage-can 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (not (in-garbage-can ?x)))
+    :effect 
+      (and 
+        (put-in-garbage-can-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-putingarbage))))
+
+  (:action put-on-tablet 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (not (on-tablet ?x)))
+    :effect 
+      (and 
+        (put-on-tablet-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-putontable))))
+
+  (:action put-in-sink-with-water 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (not (in-sink ?x))
+        (water-on ?x))
+    :effect 
+      (and 
+        (put-in-sink-with-water-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-putinwithwater))))
+
+  (:action turn-on-water 
+    :parameters ()
+    :duration (* water 1) 
+    :conditions 
+      (not (water-on))
+    :effect 
+      (and 
+        (water-on)
+        (= (total-cost) (+ (total-cost) cost-of-turnon)))
+
+  (:action turn-off-water 
+    :parameters ()
+    :duration (* water 1) 
+    :conditions 
+      (water-on)
+    :effect 
+      (and 
+        (not (water-on))
+        (= (total-cost) (+ (total-cost) cost-of-turnoff))))
+
+  (:action pick-up-with-both-hands 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (not (holding ?x)))
+    :effect 
+      (and 
+        (pick-up-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-pickupwithboth))))
+
+  (:action pick-up-with-right-hand 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (not (holding ?x)))
+    :effect 
+      (and 
+        (pick-up-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-pickupwithright))))
+
+  (:action pick-up-with-left-hand 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (not (holding ?x)))
+    :effect 
+      (and 
+        (pick-up-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-pickupwithleft))))
+
+  (:action pick-up-with-towel 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (not (holding ?x)))
+    :effect 
+      (and 
+        (pick-up-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-pickupwithtowel))))
+
+  (:action open-tablet 
+    :parameters ()
+    :duration (* tablet 1) 
+    :conditions 
+      (not (opened-tablet))
+    :effect 
+      (and 
+        (opened-tablet)
+        (= (total-cost) (+ (total-cost) cost-of-open-tablet))))
+
+  (:action close-tablet 
+    :parameters ()
+    :duration (* tablet 1) 
+    :conditions 
+      (opened-tablet)
+    :effect 
+      (and 
+        (not (opened-tablet))
+        (= (total-cost) (+ (total-cost) cost-of-close-tablet))))
+
+  (:action turn-off-robo 
+    :parameters ()
+    :duration (* robo 1) 
+    :conditions 
+      (at robo kitchen)
+    :effect 
+      (and 
+        (not (free robo))
+        (= (total-cost) (+ (total-cost) cost-of-turnoffrobo))))
+
+  (:action pick-up-robo 
+    :parameters ()
+    :duration (* robo 1) 
+    :conditions 
+      (at robo kitchen)
+    :effect 
+      (and 
+        (pick-up-at robo)
+        (= (total-cost) (+ (total-cost) cost-of-pickuprobo))))
+
+  (:action drop-robo 
+    :parameters ()
+    :duration (* robo 1) 
+    :conditions 
+      (at robo kitchen)
+    :effect 
+      (and 
+        (drop-at robo)
+        (= (total-cost) (+ (total-cost) cost-of-drop-robo))))
+
+  (:action put-on-tablet-with-one-hand 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (not (holding ?x)))
+    :effect 
+      (and 
+        (put-on-tablet-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-putontablewithone))))
+
+  (:action put-on-tablet-with-two-hands 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (not (holding ?x)))
+    :effect 
+      (and 
+        (put-on-tablet-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-putontablewithtwo))))
+
+  (:action put-in-garbage-can-with-towel 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (not (in-garbage-can ?x)))
+    :effect 
+      (and 
+        (put-in-garbage-can-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-putingargwithtowel))))
+
+  (:action put-on-tablet-with-towel 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (not (holding ?x)))
+    :effect 
+      (and 
+        (put-on-tablet-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-putontablewithtowel))))
+
+  (:action put-in-garbage-can-with-one-hand 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (not (holding ?x)))
+    :effect 
+      (and 
+        (put-in-garbage-can-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-putingargwithone))))
+
+  (:action put-on-tablet-with-two-hands-and-towel 
+    :parameters (?x - object)
+    :duration (* ?x 1) 
+    :conditions 
+      (and 
+        (at ?x kitchen)
+        (not (holding ?x)))
+    :effect 
+      (and 
+        (put-on-tablet-at ?x)
+        (= (total-cost) (+ (total-cost) cost-of-putontablewithtwotowel))))
+
+  (:action turn-off-robo-with-towel 
+    :parameters ()
+    :duration (* robo 1) 
+    :conditions 
+      (at robo kitchen)
+    :effect 
+      (and 
+        (not (free robo))
+        (= (total-cost) (+ (total-cost) cost-of-turnoffroboth)))
+
+  (:action turn-off-robo-with-one-hand 
+    :parameters ()
+    :duration (* robo 1) 
+    :conditions 
+      (at robo kitchen)
+    :effect 
+      (and 
+        (not (free robo))
+        (= (total-cost) (+ (total-cost) cost-of-turnoffrobone))))
+
+  (:action turn-off-robo-with-two-hands 
+    :parameters ()
+    :duration (* robo 1) 
+    :conditions 
+      (at robo kitchen)
+    :effect 
+      (and 
+        (not (free robo))
+        (= (total-cost) (+ (total-cost) cost-of-turnoffroboth))))
+
+  (:action turn-off-robo-without-towel 
+    :parameters ()
+    :duration (* robo 1) 
+    :conditions 
+      (at robo kitchen)
+    :effect 
+      (and 
+        (not (free robo))
+        (= (total-cost) (+ (total-cost) cost-of-turnoffroboth))))
+Time to first token: 70.4392
+Tokens Per Second: 37.31257868833696
+Response Token Count: 2606

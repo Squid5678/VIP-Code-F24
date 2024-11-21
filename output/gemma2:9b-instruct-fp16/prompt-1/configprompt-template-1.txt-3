@@ -1,0 +1,18 @@
+(goal
+  (and
+    (closed (coffee_table))
+    (closed (kitchen_counter))
+    (closed (side_table))
+    (closed (desk))
+    (closed (oven))
+    (closed (fridge))
+    (closed (cooktop))
+    (closed (robotic_arm))
+  )
+) 
+
+
+
+Time to first token: 3.8187
+Tokens Per Second: 26.247569669475048
+Response Token Count: 66

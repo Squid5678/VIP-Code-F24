@@ -1,0 +1,133 @@
+(declare (sort ?state <))
+(define (goal-state ?state)
+  (and
+    (= (count ?obj) 0)
+    (forall (?obj)
+      (implies
+        (member ?obj ?location)
+        (or
+          (equal ?location "trash")
+          (exists (?other_obj)
+            (and
+              (equal ?other_obj ?obj)
+              (not (= ?other_obj ?obj))
+              (= ?location ?other_obj)))
+          (forall (?other_obj2)
+            (implies
+              (member ?other_obj2 ?location)
+              (or
+                (equal ?other_obj2 ?obj)
+                (exists (?other_obj3)
+                  (and
+                    (equal ?other_obj3 ?other_obj2)
+                    (not (= ?other_obj3 ?other_obj2))
+                    (= ?location ?other_obj3)))))))
+          (forall (?other_obj4)
+            (implies
+              (member ?other_obj4 ?obj)
+              (or
+                (equal ?other_obj4 ?other_obj)
+                (exists (?other_obj5)
+                  (and
+                    (equal ?other_obj5 ?other_obj4)
+                    (not (= ?other_obj5 ?other_obj4))
+                    (= ?location ?other_obj5)))))))
+          ))
+    ))
+  ))
+
+(define (domain-name) kitchen-sink)
+
+(define (problem-name) my-problem)
+
+(define (type-list) 
+  (list "kitchen-utensil" "food-item" "cleaning-supply" "electronic-device"))
+
+(define (object-list)
+  (append
+    '(
+      apple
+      banana
+      broom
+      dustpan
+      fork
+      knife
+      microwave
+      pan
+      pencil
+      sponge
+      trash_bag 
+      towel 
+      tv
+      ) 
+    (map (create-object-name kitchen-utensil) kitchen-utensil-list)
+    (map (create-object-name food-item) food-item-list)
+    (map (create-object-name cleaning-supply) cleaning-supply-list)
+    (map (create-object-name electronic-device) electronic-device-list)
+  ))
+
+(define (init-facts)
+  '((apple "counter-top")
+    (banana "sink")
+    (broom "shelf")
+    (dustpan "shelf")
+    (fork "sink")
+    (knife "sink")
+    (microwave "cooktop")
+    (pan "cooktop")
+    (pencil "shelf")
+    (sponge "shelf")
+    (trash_bag "counter-top")
+    (towel "shelf")
+    (tv "tv-stand"))
+)
+
+(define (action-list)
+  '((?object ?location)
+   (?object1 ?object2 ?location)
+   (robo ?location)))
+
+(define (action-preconds action)
+  (cond
+    ((equal (first action) ?object) 
+      '( (= (second action) ?object)))
+    ((equal (first action) ?object1) 
+      '(
+        (= (second action) ?object1)
+        (= (third action) ?location)
+        ))
+    ((equal (first action) robo)
+     '( (= (second action) ?location))
+  ))
+
+(define (action-effects action)
+  (cond
+    ((equal (first action) ?object) 
+      '(
+        (delete ?object ?location)
+        (= (count ?location) (+ (count ?location) -1))))
+    ((equal (first action) ?object1) 
+      '(
+        (delete ?object1 ?location)
+        (= (count ?location) (+ (count ?location) -1))
+        (= ?other_obj ?object2)))
+  ))
+
+(define (goal-specification)
+  '(and
+     (forall (?obj)
+       (implies
+         (member ?obj ?location)
+         (or
+           (equal ?location "trash")
+           (exists (?other_obj)
+             (and
+               (equal ?other_obj ?obj)
+               (not (= ?other_obj ?obj))
+               (= ?location ?other_obj)))
+           )))
+     ))
+)
+Time to first token: 22.801
+Tokens Per Second: 38.096949548497236
+Response Token Count: 848

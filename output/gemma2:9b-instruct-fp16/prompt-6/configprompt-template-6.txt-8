@@ -1,0 +1,7 @@
+(goal 
+  (and 
+   (free robo)
+   ))
+Time to first token: 1.4504
+Tokens Per Second: 24.324324324324323
+Response Token Count: 14

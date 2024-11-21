@@ -1,0 +1,10 @@
+(and
+ (at robot kitchen)
+ (holding robot pencil_7a2ba6cf-5419-4c41-a89e-afbeea07fd60)
+ ) 
+
+
+
+Time to first token: 2.6501
+Tokens Per Second: 25.839793281653748
+Response Token Count: 38

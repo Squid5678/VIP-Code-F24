@@ -1,0 +1,15 @@
+(define (goal)
+  (and
+   (= (at ?o1 coffee_table_6273f0df-8757-4b02-aee5-2178e7756601)) 
+   (= (at ?o2 sink_3efcac75-aea3-4d71-838b-bf0e185ed70a)) 
+   (= (at ?o3 shelf_1dee60b5-7ce1-4e31-b559-0cb432bc0f44)) 
+   (= (at ?o4 cooktop_ed54fea4-caa6-4132-bd07-ad866f00e9c0))
+   (= ?o1 bottle_9e312c9f-cb2a-438a-93dd-3f326c22a2dc) 
+   (= ?o2 towel_roll_96a2795b-0844-4a8f-984a-8d446918aba0) 
+   (= ?o3 fork_097b5cc4-d72f-4550-a742-79460dc0f63f) 
+   (= ?o4 pan_dfc4a8be-8708-47ce-b70c-ef51f763697c)
+  )
+)
+Time to first token: 7.6934
+Tokens Per Second: 37.67266638760987
+Response Token Count: 269

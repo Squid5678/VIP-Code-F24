@@ -1,0 +1,9 @@
+(goal (and 
+  (not (holding ?robo))
+ )) 
+
+
+
+Time to first token: 1.4849
+Tokens Per Second: 24.327784891165173
+Response Token Count: 15

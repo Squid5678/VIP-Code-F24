@@ -1,0 +1,8 @@
+(and 
+ (at robot shelf_c6886a28-96c5-4e72-a770-d6a5f67e83b7) 
+ (holding-robot bottle_ba87abbf-89e1-443e-9033-bfd99e938842)
+ ) 
+
+Time to first token: 4.1454
+Tokens Per Second: 26.507427905621906
+Response Token Count: 62
